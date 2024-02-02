@@ -6,7 +6,6 @@ $(function () {
     initialSlider();
     clickSlider();
 
-    // Inicia o slider
     function initialSlider() {
         var spansContainer = $('.header-background-images > .spans-container');
         for (let s = 0; s < maximunIndex; s++) {
@@ -21,8 +20,6 @@ $(function () {
             toggleSlider();
         }, delay);
     }
-
-    // Altera entre os sliders
     function toggleSlider() {
         $('.header-background-images > img').eq(currentIndex).stop().fadeOut(1000);
         currentIndex++;
@@ -34,8 +31,6 @@ $(function () {
         $('.header-background-images > img').eq(currentIndex).stop().fadeIn(1000);
         toggleText(currentIndex);
     }
-
-    // Clica nos sliders
     function clickSlider() {
         $('.spans-container > span').click(function () {
             $('.header-background-images > img').eq(currentIndex).stop().fadeOut(1000);
@@ -46,8 +41,6 @@ $(function () {
             $(this).css('background-color', '#78818f');
         });
     }
-
-    // Altera o texto com base no índice do slider
     function toggleText(index) {
         var title = $('#title');
         var text = $('#text');

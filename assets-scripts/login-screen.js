@@ -22,7 +22,6 @@ function creatElementsHtml(){
     for (let c = 0; c < arrayChildren.length; c++) {
         divTitle.appendChild(arrayChildren[c]);
     }
-
     let divForm = document.createElement("div");
     divForm.classList.add("form");
 
@@ -45,9 +44,8 @@ function creatElementsHtml(){
         inputEmail.setAttribute("requerid", attributesArrayInputEmail[0].required);
         inputEmail.setAttribute("type", attributesArrayInputEmail[0].type);
     }
-
     let inputPassword = document.createElement("input");
-    
+
     const attributesArrayInputPassword = [
         {
             placeholder: "Seu melhor E-mail",
@@ -63,7 +61,6 @@ function creatElementsHtml(){
         inputPassword.setAttribute("requerid", attributesArrayInputPassword[0].required);
         inputPassword.setAttribute("type", attributesArrayInputPassword[0].type);
     }
-
     let button = document.createElement("button");
     button.innerHTML = "Continue";
 
@@ -136,35 +133,38 @@ function creatElementsHtml(){
     pPassword.setAttribute("id", "password");
     pPassword.innerHTML = "Senha é requerida";
 
-    divContainerErrorMessage.appendChild(pEmail);
-    divContainerErrorMessage.appendChild(pPassword);
-
-    divTerms.appendChild(linkTerms);
-    divTerms.appendChild(linkPassword);
-    divTerms.appendChild(divContainerErrorMessage);
-
-    divButtonGoogle.appendChild(imgGoogle);
-    divButtonGoogle.appendChild(buttonSignupGoogle);
-
-    divButtonEmail.appendChild(imgMessage);
-    divButtonEmail.appendChild(buttonSignupEmail);
-
-    divConteinerSignOptions.appendChild(divButtonEmail);
-    divConteinerSignOptions.appendChild(divButtonGoogle);
-
-    form.appendChild(inputEmail);
-    form.appendChild(inputPassword);
-    form.appendChild(button);
-    form.appendChild(divContainerOr);
-
-    divForm.appendChild(form);
-    divForm.appendChild(divConteinerSignOptions);
-    divForm.appendChild(divTerms);
-
-    divContainerForm.appendChild(divBookIcon);
-    divContainerForm.appendChild(divTitle);
-    divContainerForm.appendChild(divForm);
-
+    const containerErrorMessageChildren = [pEmail, pPassword];
+    containerErrorMessageChildren.forEach((child)=>{
+        divContainerErrorMessage.appendChild(child);
+    })
+    const divTermsChildren = [linkTerms, linkPassword, divContainerErrorMessage];
+    divTermsChildren.forEach((child)=>{
+        divTerms.appendChild(child);
+    })
+    const divButtonGoogleChildren = [imgGoogle, buttonSignupGoogle];
+    divButtonGoogleChildren.forEach((child)=>{
+        divButtonGoogle.appendChild(child);
+    })
+    const divButtonEmailChildren = [imgMessage, buttonSignupEmail];
+    divButtonEmailChildren.forEach((child)=>{
+        divButtonEmail.appendChild(child);
+    })
+    const divContainerSignOptionsChildren = [divButtonEmail, divButtonGoogle];
+    divContainerSignOptionsChildren.forEach((child)=>{
+        divConteinerSignOptions.appendChild(child);
+    })
+    const formChildren = [inputEmail, inputPassword, button, divContainerOr];
+    formChildren.forEach((child)=>{
+        form.appendChild(child);
+    })
+    const divFormChildren = [form, divConteinerSignOptions, divTerms];
+    divFormChildren.forEach((child)=>{
+        divForm.appendChild(child);
+    })
+    const divContainerFormChildren = [divBookIcon, divTitle, divForm];
+    divContainerFormChildren.forEach((child)=>{
+        divContainerForm.appendChild(child);
+    })
     divFatherContainer.appendChild(divContainerForm);
 
     divFatherContainer.addEventListener("click", function (evt) {

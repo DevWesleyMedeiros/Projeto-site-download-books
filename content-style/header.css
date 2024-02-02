@@ -270,6 +270,8 @@ header > .header-background-images{
     margin: 0 20px;
     cursor: pointer;
 }
+
+/* CONTROLE DA RESPONSIVIDADE */
 @media screen and (max-width: 760px){
     header{
         min-height: 100%;
@@ -297,6 +299,14 @@ header > .header-background-images{
         font-size: 15px;
         text-align: center;
     }
+    nav{
+        border: var(--border);
+        display: block;
+    }
+    .external-books-sites-container{
+        display: block;
+        border: var(--border);
+    }
     .spans-container{
         display: flex;
         justify-content: flex-start;
@@ -305,15 +315,13 @@ header > .header-background-images{
         left: 50%;
     }
     .search-bar{
-        justify-content: space-between;
-        align-items: center;
+        flex-direction: column;
         width: 100%;
         border: 1px solid red;
     }
     .container-search-bar{
-        display: flex;
-        justify-content: center;
-        width: 150px;
+        display: block;
+        width: 100%;
     }
     .animation{
         display: flex;
