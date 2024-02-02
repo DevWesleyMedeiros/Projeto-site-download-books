@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon-image/favicon-books.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="content-style/header.css">
+    <link rel="stylesheet" href="content-style/main.css">
+    <link rel="stylesheet" href="content-style/footer.css">
+    <link rel="stylesheet" href="login-screen-style/style.css">
+    <title>Free Books</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="external-books-sites-container">
+                <div class="sign-in-button">
+                    <button id="button-register">Login</button>
+                    <div class="load">
+                        <!-- load icon -->
+                    </div>
+                </div>
+            </div>
+            <div class="search-bar">
+                <div class="animation">
+                    <div class="img-animation">
+                        <!-- place the animation img here -->
+                    </div>
+                    <div class="discover-genres">
+                        <p>
+                            <span>Descover
+                                <i class="fa-solid fa-caret-down" id="icon-down" style="margin-left: 0.1rem;"></i>
+                                <i class="fa-solid fa-caret-up" id="icon-up" style="display: none; margin-left: 0.1rem;"></i>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="container-search-bar">
+                    <input type="search" placeholder="Pesquisar no site">
+                    <div class="search-icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="header-background-images">
+            <h1 id="title">
+                Muitos Livros para downloads 100% de graça
+            </h1>
+            <img src="assets-images/imagem1.jpg" alt="Imagem background 2" id="bkg-image1">
+            <p id="text">
+                Bem-vindo à biblioteca de livros. Possuímos mais de 50.000 livros que aguardam ser descobertos por você. 
+            </p>
+            <img src="assets-images/imagem2.jpg" alt="Imagem background 1" id="bkg-image2">
+            <img src="assets-images/imagem3.jpg" alt="Imagem background 3" id="bkg-image3">
+            <div class="spans-container">
+                <!-- spans criadas via js -->
+            </div>
+        </div>
+    </header>
+    <div class="container-discover-genres">
+        <div class="genres-books">
+            <h2>Genêros</h2>
+            <ul>
+                <li>
+                    <a href="#">História & aventura</a>
+                </li>
+                <li>
+                    <a href="#">Bios & História</a>
+                </li>
+                <li>
+                    <a href="#">Para crianças</a>
+                </li>
+                <li>
+                    <a href="#">Fantasias</a>
+                </li>
+                <li>
+                    <a href="#">Histórias de ficção</a>
+                </li>
+                <li>
+                    <a href="#">Terror</a>
+                </li>
+            </ul>
+        </div>
+        <div class="genres-books" id="genres">
+            <ul>
+                <li>
+                    <a href="#">Literatura & ficção</a>
+                </li>
+                <li>
+                    <a href="#">Mistérios</a>
+                </li>
+                <li>
+                    <a href="#">Realidade</a>
+                </li>
+                <li>
+                    <a href="#">Romance</a>
+                </li>
+                <li>
+                    <a href="#">Ficção & ciência</a>
+                </li>
+                <li>
+                    <a href="#">Jovens e adultos</a>
+                </li>
+            </ul>
+        </div>
+        <div class="genres-books" id="resources">
+            <h2>Recursos</h2>
+            <ul>
+                <li>
+                    <a href="#">Autores</a>
+                </li>
+                <li>
+                    <a href="#">Linguagens</a>
+                </li>
+                <li>
+                    <a href="#">Gêneros</a>
+                </li>
+                <li>
+                    <a href="#">Artigos</a>
+                </li>
+                <li>
+                    <a href="#">Entrevistas com autores</a>
+                </li>
+                <li>
+                    <a href="#">Discussões</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <main>
+        <section class="featured-books">
+            <div class="week-books-box">
+                <div class="title">
+                    <h1>Livros em destaque</h1>
+                    <div class="show-more">
+                        <a href="#" id="show-more-books">(Mostrar mais)</a>
+                        <a href="#" id="show-less-books" style="display: none;">(Mostrar menos)</a>
+                    </div>
+                </div>
+                <div class="books-box">
+                    <!-- Criada a partir do JS de acordo com a quantidade de livros da semana -->
+                </div>
+            </div>
+        </section>
+        <section class="search-for-genres">
+            <div class="subtitle">
+                <h1>Escolha seu gênero favorito</h1>
+                <a href="#" target="_blank" id="see-more-genres">Ver todos</a>
+            </div>
+            <div class="genres-list">
+                <div class="box-genre">
+                    <img src="assets-images-for-genres/img-genero-romance.jpg" alt="Imagem gênero romance" id="romance">
+                    <div class="genre-title">Romance</div>
+                </div>
+                <div class="box-genre">
+                    <img src="assets-images-for-genres/img-genre-action-adventure.jpg" id="action-adventure" alt="Imagem gênero ação e aventura">
+                    <div class="genre-title">Ação e aventura</div>
+                </div>
+                <div class="box-genre" >
+                    <img src="assets-images-for-genres/img-genre-mistery-thriller.jpg" id="mistery-thriller" alt="Imagem gênero suspense">
+                    <div class="genre-title">Mistérios e suspense</div>
+                </div>
+                <div class="box-genre">
+                    <img src="assets-images-for-genres/img-genre-biographies-historical.jpg" id="biographies-history" alt="Imagem gênero para biografias históricas">
+                    <div class="genre-title">Biografias históricas</div>
+                </div>
+                <div class="box-genre">
+                    <img src="assets-images-for-genres/img-genero-for-children.jpg" id="childrens" alt="Imagem gênero para crianças">
+                    <div class="genre-title">Para crianças</div>
+                </div>
+                <div class="box-genre">
+                    <img src="assets-images-for-genres/img-genero-young-adult.jpg" id="young-adult" alt="Imagem gênero jovens e adultos">
+                    <div class="genre-title">Para jovens e adultos</div>
+                </div>
+                <div class="box-genre">
+                    <img src="assets-images-for-genres/img-genre-fantasy.jpg" id="fantasy" alt="Imagem gênero fantasia">
+                    <div class="genre-title">Fantasia</div>
+                </div>
+                <div class="box-genre">
+                    <div class="genre-title"></div>
+                    <img src="assets-images-for-genres/img-genre-historical-ficction.jpg" id="historical-fiction" alt="Imagem gênero ficção histórica">
+                    <div class="genre-title">Ficção histórica</div>
+                </div>
+                <div class="box-genre">
+                    <img src="assets-images-for-genres/img-genre-horror.jpg" id="horror" alt="Imagem gênero horror">
+                    <div class="genre-title">Horror</div>
+                </div>
+                <div class="box-genre" id="literaly-ficction">
+                    <img src="assets-images-for-genres/img-genre-literality-fiction.jpg" id="literaly-fiction" alt="Imagem gênero ficção literaria">
+                    <div class="genre-title">Ficção literária</div>
+                </div>
+                <div class="box-genre">
+                    <img src="assets-images-for-genres/img-genero-non-fiction.jpg" id="non-fiction" alt="Imagem gênero Real">
+                    <div class="genre-title">Histórias reais</div>
+                </div>
+                <div class="box-genre">
+                    <img src="assets-images-for-genres/img-genre-fiction-science.jpg" id="fiction-science" alt="Imagem gênero ficção científica">
+                    <div class="genre-title">Ficção científica</div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="assets-scripts/slider.js"></script>
+    <script src="assets-scripts/show-more.js"></script>
+    <script type="module" src="assets-scripts/menu-down.js"></script>
+    <script type="module" src="assets-scripts/login-screen.js"></script>
+</body>
+</html>
