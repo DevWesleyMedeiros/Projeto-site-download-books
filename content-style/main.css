@@ -13,9 +13,10 @@ main {
   max-height: 900px;
   height: 100%;
   width: 100%;
+  background-color: #fffacd;
 }
 main > section.featured-books {
-  margin: 5rem;
+  margin: 1rem;
   height: 500px;
 }
 section.featured-books > .week-books-box {
@@ -101,7 +102,9 @@ section.featured-books > .week-books-box {
   color: #d9534f;
 }
 main > section.search-for-genres {
-  margin: 5rem;
+  margin: 1rem;
+  /* background-color: #ffff99; */
+  background-color: #fffacd;
 }
 section.search-for-genres > .subtitle {
   width: 50%;
@@ -134,6 +137,7 @@ section.search-for-genres > div.genres-list {
   grid-template-columns: repeat(4, 4fr);
   column-gap: 20px;
   row-gap: 20px;
+  padding: 1.5rem;
 }
 .genres-list .box-genre {
   width: 100%;
@@ -181,6 +185,7 @@ section.search-for-genres > div.genres-list {
 main > section.recomendations {
   margin: 1rem;
   height: 500px;
+  background-color: #fffacd;
 }
 section.recomendations > .week-books-recomendations {
   width: 100%;
@@ -220,6 +225,7 @@ section.recomendations > .week-books-recomendations .container-recomendations {
   align-items: center;
 }
 .container-recomendations .icon {
+  display: none;
   width: 50px;
   height: 50px;
   text-align: center;
@@ -242,11 +248,10 @@ section.recomendations
   .container-recomendation-books {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
   padding: 0 0.5rem;
   column-gap: 15px;
   place-items: left;
-  overflow-x: auto;
+  overflow-x: hidden;
   white-space: nowrap;
 }
 .week-books-recomendations
@@ -254,10 +259,13 @@ section.recomendations
   .container-recomendation-books
   .book-single {
   width: 226px;
-  height: 400px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  -webkit-box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.75);
   border: var(--border);
 }
 
