@@ -1,224 +1,310 @@
-@import url('https://fonts.googleapis.com/css2?family=Passion+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Passion+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sriracha&display=swap");
 
-:root{
-    --fundo1: blue;
-    --fundo2: red;
-    --border: 2px solid #000;
-    --font-paralaxe: 'Passion One', 'cursive';
-    --font-texto-paralaxe: 'Sriracha', 'cursive';
+:root {
+  --fundo1: blue;
+  --fundo2: red;
+  --border: 2px solid #000;
+  --font-paralaxe: "Passion One", "cursive";
+  --font-texto-paralaxe: "Sriracha", "cursive";
 }
-main{
-    max-width: 1500px;
-    max-height: 900px;
-    height: 100%;
-    width: 100%;
+main {
+  max-width: 1500px;
+  max-height: 900px;
+  height: 100%;
+  width: 100%;
 }
-main > section.featured-books{
-    margin: 5rem;
-    height: 500px;
+main > section.featured-books {
+  margin: 5rem;
+  height: 500px;
 }
-section.featured-books > .week-books-box{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+section.featured-books > .week-books-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
-.week-books-box > .title{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 1rem 1rem;
+.week-books-box > .title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem 1rem;
 }
-.title h1{
-    font-family: Arial, Helvetica, sans-serif;
-    text-transform: uppercase;
-    font-size: 25px;
-    font-weight: bold;
-    color: #000;
+.title h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 25px;
+  font-weight: bold;
+  color: #000;
 }
-.title .show-more{
-    text-align: center;
-    background-color: #000;
-    margin-left: 0.5rem;
-    padding: 0.2rem;
-    border-radius: 5px;
+.title .show-more {
+  text-align: center;
+  background-color: #000;
+  margin-left: 0.5rem;
+  padding: 0.2rem;
+  border-radius: 5px;
 }
-.title a{
-    text-decoration: none;
-    color: #fff;
-    font-weight: 400;
-    text-transform: uppercase;
+.title a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 400;
+  text-transform: uppercase;
 }
-.title a:hover{
-    text-decoration: underline;
+.title a:hover {
+  text-decoration: underline;
 }
-.week-books-box > .books-box{
-    width: 55%;
-    display: grid;
-    padding: 0 1rem;
-    column-gap: 15px;
-    place-items: left;
-    overflow-x: hidden;
-    white-space: nowrap;
-    transition: width 1.5s ease;
+.week-books-box > .books-box {
+  width: 55%;
+  display: grid;
+  padding: 0 1rem;
+  column-gap: 15px;
+  place-items: left;
+  overflow-x: hidden;
+  white-space: nowrap;
+  transition: width 1.5s ease;
 }
-.books-box > .container-book-single{
-    width: 220px;
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
-    transition: width 1.5s linear;
+.books-box > .container-book-single {
+  width: 226px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: width 1.5s linear;
 }
-.container-book-single > .book-cover{
-    height: 100%;
-    width: 100%;
-    background-image: url("../assets-images-for-genres/img-book-cover1.jpg");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.container-book-single > .book-cover {
+  height: 100%;
+  width: 100%;
+  background-image: url("../assets-images-for-genres/img-book-cover1.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.container-book-single > .book-information{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: inherit;
+.container-book-single > .book-information {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: inherit;
 }
-.book-information > h3{
-    margin: 0 0.5rem;
-    font-size: 1.5rem;
-    line-height: 1.5;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #000;
+.book-information > h3 {
+  margin: 0 0.5rem;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000;
 }
-.book-information > p{
-    margin: 0.5rem 0.5rem;
-    color: #777;
-    font-size: 1.5em;
+.book-information > p {
+  margin: 0.5rem 0.5rem;
+  color: #777;
+  font-size: 1.5em;
 }
-.book-information > p.book-price{
-    color: #d9534f;
+.book-information > p.book-price {
+  color: #d9534f;
 }
-main > section.search-for-genres{
-    margin: 5rem;
-
+main > section.search-for-genres {
+  margin: 5rem;
 }
-section.search-for-genres > .subtitle{
-    width: 50%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 1rem 0.5rem;
+section.search-for-genres > .subtitle {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 1rem 0;
 }
-.subtitle h1{
-    font-family: Arial, Helvetica, sans-serif;
-    text-transform: uppercase;
-    font-size: 25px;
-    font-weight: bold;
-    color: #000;
+.subtitle h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 25px;
+  font-weight: bold;
+  color: #000;
 }
-.subtitle a{
-    text-decoration: none;
-    color: #fff;
-    font-weight: 400;
-    text-transform: uppercase;
-    margin-left: 0.5rem;
+.subtitle a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-left: 0.5rem;
 }
-.subtitle a:hover{
-    text-decoration: underline;
+.subtitle a:hover {
+  text-decoration: underline;
 }
-section.search-for-genres > div.genres-list{
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, 4fr);
-    column-gap: 20px;
-    row-gap: 20px;
+section.search-for-genres > div.genres-list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 4fr);
+  column-gap: 20px;
+  row-gap: 20px;
 }
-.genres-list .box-genre{
-    width: 100%;
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    cursor: pointer;
-    -webkit-box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.75);
-    -moz-box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.75);
-    box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.75);
-    position: relative;
+.genres-list .box-genre {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  -webkit-box-shadow: 2px 2px 11px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 2px 11px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 2px 2px 11px 1px rgba(0, 0, 0, 0.75);
+  position: relative;
 }
-#romance, #action-adventure, 
-#young-adult, #fantasy,
-#historical-fiction, #fiction-science,
-#non-fiction, #childrens,
-#literaly-fiction, #mistery-thriller,
-#horror, #biographies-history{
-    width: inherit;
-    height: inherit;
+#romance,
+#action-adventure,
+#young-adult,
+#fantasy,
+#historical-fiction,
+#fiction-science,
+#non-fiction,
+#childrens,
+#literaly-fiction,
+#mistery-thriller,
+#horror,
+#biographies-history {
+  width: inherit;
+  height: inherit;
 }
-.box-genre .genre-title{
-    width: 100%;
-    height: 60px;
-    background-color: rgb(0, 0, 0, 0.514);
-    background-attachment: fixed;
-    text-shadow: 1px 1px 1px black;
-    text-align: center;
-    font-family: var(--font-texto-paralaxe);
-    font-variant: small-caps;
-    font-size: 2vw;
-    color: white;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+.box-genre .genre-title {
+  width: 100%;
+  height: 60px;
+  background-color: rgb(0, 0, 0, 0.514);
+  background-attachment: fixed;
+  text-shadow: 1px 1px 1px black;
+  text-align: center;
+  font-family: var(--font-texto-paralaxe);
+  font-variant: small-caps;
+  font-size: 2vw;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+main > section.recomendations {
+  margin: 1rem;
+  height: 500px;
+}
+section.recomendations > .week-books-recomendations {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.week-books-recomendations h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 25px;
+  font-weight: bold;
+  color: #000;
+}
+.week-books-recomendations .recomendation-books-title {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem 0;
+  margin-left: 3.9rem;
+}
+.week-books-recomendations .view-all a {
+  text-decoration: none;
+  background-color: #fff;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-left: 0.5rem;
+  color: #000;
+}
+.week-books-recomendations .view-all a:hover {
+  text-decoration: underline;
+}
+section.recomendations > .week-books-recomendations .container-recomendations {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container-recomendations .icon {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  padding: 0.2rem 0;
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: transparent;
+}
+#left {
+  margin-left: 0.5rem;
+}
+#right {
+  margin-right: 0.5rem;
+}
+section.recomendations
+  .week-books-recomendations
+  .container-recomendations
+  .container-recomendation-books {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  padding: 0 0.5rem;
+  column-gap: 15px;
+  place-items: left;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.week-books-recomendations
+  .container-recomendations
+  .container-recomendation-books
+  .book-single {
+  width: 226px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: var(--border);
 }
 
 /* CONTROLE DA RESPONSIVIDADE */
-@media screen and (max-width: 760px){
-    section.search-for-genres > div.genres-list{
-        grid-template-columns: repeat(2, 2fr);
-    }
-    .box-genre .genre-title{
-        text-align: center;
-        font-size: 4vw;
-        position: absolute;
-    }
-    section.search-for-genres > .subtitle{
-        display: block;
-        margin: 0 auto;
-        width: 50%;
-        padding: 0 0;
-    }
-    .week-books-box > .title{
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .title h1{
-        margin-bottom: 0.5rem;
-        font-size: 20px;
-    }
-    .title .show-more{
-        margin: 0;
-    }
-    .subtitle h1{
-        width: 100%;
-        text-align: center;
-        font-size: 15px;
-        margin: 0.2rem;
-    }
+@media screen and (max-width: 760px) {
+  section.search-for-genres > div.genres-list {
+    grid-template-columns: repeat(2, 2fr);
+  }
+  .box-genre .genre-title {
+    text-align: center;
+    font-size: 4vw;
+    position: absolute;
+  }
+  section.search-for-genres > .subtitle {
+    display: block;
+    margin: 0 0;
+    width: 50%;
+    padding: 0 0;
+  }
+  .week-books-box > .title {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .title h1 {
+    margin-bottom: 0.5rem;
+    font-size: 20px;
+  }
+  .title .show-more {
+    margin: 0;
+  }
+  .subtitle h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+    margin: 0.2rem;
+  }
 }
-@media screen and (max-width: 560px){
-    section.search-for-genres > div.genres-list{
-        grid-template-columns: repeat(1, 1fr);
-    }
-    .title h1{
-        text-align: left;
-        font-size: 15px;
-    }
-    .box-genre .genre-title{
-        text-align: center;
-        font-size: 6vw;
-    }
+@media screen and (max-width: 560px) {
+  section.search-for-genres > div.genres-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .title h1 {
+    text-align: left;
+    font-size: 15px;
+  }
+  .box-genre .genre-title {
+    text-align: center;
+    font-size: 6vw;
+  }
 }
