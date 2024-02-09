@@ -16,7 +16,7 @@ main {
   background-color: #fffacd;
 }
 main > section.featured-books {
-  margin: 1rem;
+  margin: 0 1rem;
   height: 500px;
 }
 section.featured-books > .week-books-box {
@@ -102,7 +102,7 @@ section.featured-books > .week-books-box {
   color: #d9534f;
 }
 main > section.search-for-genres {
-  margin: 1rem;
+  margin: 8.3rem 5rem 0 5rem;
   /* background-color: #ffff99; */
   background-color: #fffacd;
 }
@@ -112,7 +112,7 @@ section.search-for-genres > .subtitle {
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 1rem 0;
+  margin-left: 1.5rem;
 }
 .subtitle h1 {
   font-family: Arial, Helvetica, sans-serif;
@@ -183,7 +183,7 @@ section.search-for-genres > div.genres-list {
   transform: translateX(-50%) translateY(-50%);
 }
 main > section.recomendations {
-  margin: 1rem;
+  margin: 0 5rem;
   height: 500px;
   background-color: #fffacd;
 }

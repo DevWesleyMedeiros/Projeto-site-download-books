@@ -9,10 +9,13 @@
     <link rel="stylesheet" href="content-style/header.css">
     <link rel="stylesheet" href="content-style/main.css">
     <link rel="stylesheet" href="content-style/footer.css">
-    <link rel="stylesheet" href="login-screen-style/style.css">
+    <link rel="stylesheet" href="general-styles/style.css">
     <title>Free Books</title>
 </head>
 <body>
+    <div class="feedback-box">
+        <h3>FeedBack</h3>
+    </div>
     <header>
         <nav>
             <div class="external-books-sites-container">
@@ -225,5 +228,10 @@
     <script src="assets-scripts/slider-books.js"></script>
     <script type="module" src="assets-scripts/menu-down.js"></script>
     <script type="module" src="assets-scripts/login-screen.js"></script>
+
+    <script>
+        const buttonFeedBack = document.querySelector(".feedback-box");
+        buttonFeedBack.addEventListener("click", (evt) =>{window.location.href = `feedback.html`});
+    </script>
 </body>
 </html>
