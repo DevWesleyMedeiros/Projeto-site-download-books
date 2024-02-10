@@ -10,14 +10,13 @@
 <body>
     <div class="container-sendbox">
         <div class="sendbox">
-            <form action="#">
+            <form>
                 <div class="feedback-title">
                     <h2>Feedback</h2>
                     <div class="fa-solid fa-circle-xmark" id="close"></div>
                 </div>
-                <hr>
                 <div class="textarea">
-                    <textarea name="text" id="text" cols="15" rows="10" required placeholder="Envie-nos sua sugestão"></textarea>
+                    <textarea type="text" id="text" name="text-area" cols="15" rows="10" required placeholder="Envie-nos sua sugestão"></textarea>
                 </div>
                 <div class="container-input">
                     <input type="email" name="email" id="email" class="input-email" required placeholder="Seu melhor E-mail">
@@ -27,11 +26,6 @@
             </form>
         </div>
     </div>
-    <script>
-        const closeIcon = document.getElementById("close");
-        closeIcon.addEventListener("click", (evt) => {
-            document.querySelector(".container-sendbox").style.visibility = "hidden";
-        })
     </script>
 </body>
 </html>

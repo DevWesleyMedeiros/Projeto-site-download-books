@@ -23,27 +23,6 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
-.feedback-box {
-  width: 2.5rem;
-  height: 10rem;
-  border-radius: 0.5rem;
-  background-color: #070808;
-  position: fixed;
-  cursor: pointer;
-  top: 50%;
-  right: 0;
-  border: var(--border);
-  z-index: 999;
-  transform: translateY(-50%);
-}
-.feedback-box h3 {
-  color: #fff;
-  font-size: 1.7em;
-  font-family: "Caveat", cursive;
-  position: relative;
-  top: 50%;
-  transform: rotate(-90deg) translateX(-30%);
-}
 header {
   max-width: 1500px;
   width: 100%;
