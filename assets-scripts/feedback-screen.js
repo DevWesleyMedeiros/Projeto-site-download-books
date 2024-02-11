@@ -5,8 +5,9 @@ const stylesFeedbackScreen = {
         align-items: center;
         width: 100vw;
         height: 100vh;
-        background-color: #fff0;
-        z-index: 7;
+        background-color: #fff;
+        opacity: .9;
+        z-index: 10;
         position: fixed;
         visibility: visible;
     `,
@@ -78,92 +79,58 @@ const stylesFeedbackScreen = {
         margin-top: 0.4rem;
         font-size: 0.8rem;
         color: #3498db;
-    `,
+    `
 };
 
-function displayFeedBackBox(createElementForm) {
+
+function displayFeedBackBox() {
     let divContainerSendBox = document.createElement("div");
     divContainerSendBox.setAttribute("style", stylesFeedbackScreen.divContainerSendBox);
-    divContainerSendBox.appendChild(createElementForm);
-    return divContainerSendBox;
-}
 
-function createElementsHtml(createElementForm) {
     let divSendbox = document.createElement("div");
     divSendbox.setAttribute("style", stylesFeedbackScreen.divSendbox);
-    divSendbox.appendChild(createElementForm);
-    return divSendbox;
-}
 
-function createElementForm(createFeedbackTitle, createDivTextAreaContainer, createDivContainerInput) {
     let form = document.createElement("form");
     form.setAttribute("style", stylesFeedbackScreen.form);
 
-    let arrayFormChildren = [createFeedbackTitle, createDivTextAreaContainer, createDivContainerInput];
-
-    arrayFormChildren.forEach((element) => {
-        form.appendChild(element);
-    });
-    return form;
-}
-
-function createFeedbackTitle() {
-
     let divFeedbackTitle = document.createElement("div");
-    let h2 = document.createElement("h2");
-    let divIcon = document.createElement("div");
-
-    divIcon.setAttribute("class", "fa-solid fa-circle-xmark"); 
-    divIcon.setAttribute("id", "close");
-
-    h2.innerHTML = `Feedback`;
     divFeedbackTitle.setAttribute("style", stylesFeedbackScreen.divfeedbackTitle);
 
-    let arrayChaild = [h2, divIcon];
-    arrayChaild.forEach((element) => {
-        divFeedbackTitle.appendChild(element);
-    });
-    return divFeedbackTitle;
-}
+    let h2 = document.createElement("h2");
+    h2.innerHTML = `Feedback`;
 
-function createDivTextAreaContainer() {
+    let divIcon = document.createElement("div");
+    divIcon.setAttribute("class", "fa-solid fa-circle-xmark");
+    divIcon.setAttribute("id", "close");
+
+    divFeedbackTitle.appendChild(h2);
+    divFeedbackTitle.appendChild(divIcon);
+
     let divTextArea = document.createElement("div");
     divTextArea.setAttribute("style", stylesFeedbackScreen.textArea);
 
     let textArea = document.createElement("textarea");
-    const objectAttributeForTextarea = {
-        type: "text",
-        id: "text",
-        name: "text-area",
-        cols: 15,
-        rows: 10,
-        required: "",
-        placeholder: "Envie-nos sua sugestão",
-    };
-    for (const attr in objectAttributeForTextarea) {
-        textArea.setAttribute(attr, objectAttributeForTextarea[attr]);
-    }
-    divTextArea.appendChild(textArea);
-    return divTextArea;
-}
+    textArea.setAttribute("type", "text");
+    textArea.setAttribute("id", "text");
+    textArea.setAttribute("name", "text-area");
+    textArea.setAttribute("cols", "15");
+    textArea.setAttribute("rows", "10");
+    textArea.setAttribute("required", "");
+    textArea.setAttribute("placeholder", "Envie-nos sua sugestão");
 
-function createDivContainerInput() {
+    divTextArea.appendChild(textArea);
+
     let divContainerInput = document.createElement("div");
     divContainerInput.setAttribute("style", stylesFeedbackScreen.containerInput);
 
     let inputEmail = document.createElement("input");
     inputEmail.setAttribute("style", stylesFeedbackScreen.taginputTypeEmail);
-    const objectAttributeForInput = {
-        type: "email",
-        id: "email",
-        name: "email",
-        class: "input-email",
-        required: "",
-        placeholder: "Seu melhor Email",
-    };
-    for (const attr in objectAttributeForInput) {
-        inputEmail.setAttribute(attr, objectAttributeForInput[attr]);
-    }
+    inputEmail.setAttribute("type", "email");
+    inputEmail.setAttribute("id", "email");
+    inputEmail.setAttribute("name", "email");
+    inputEmail.setAttribute("class", "input-email");
+    inputEmail.setAttribute("required", "");
+    inputEmail.setAttribute("placeholder", "Seu melhor Email");
 
     let button = document.createElement("button");
     button.setAttribute("style", stylesFeedbackScreen.tagbutton);
@@ -173,14 +140,19 @@ function createDivContainerInput() {
     p.setAttribute("style", stylesFeedbackScreen.tagp);
     p.innerHTML = `Powered by Wesley Medeiros`;
 
-    let arrayChildren = [inputEmail, button, p];
+    divContainerInput.appendChild(inputEmail);
+    divContainerInput.appendChild(button);
+    divContainerInput.appendChild(p);
 
-    arrayChildren.forEach((element) => {
-        divContainerInput.appendChild(element);
-    });
-    return divContainerInput;
+    form.appendChild(divFeedbackTitle);
+    form.appendChild(divTextArea);
+    form.appendChild(divContainerInput);
+
+    divSendbox.appendChild(form);
+    divContainerSendBox.appendChild(divSendbox);
+
+    document.body.prepend(divContainerSendBox);
 }
-document.body.append(displayFeedBackBox);
 
 export { displayFeedBackBox };
 
