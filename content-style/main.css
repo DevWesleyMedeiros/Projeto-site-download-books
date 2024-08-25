@@ -1,6 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Passion+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Sriracha&display=swap");
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+  }
 :root {
   --fundo1: blue;
   --fundo2: red;
@@ -8,6 +13,7 @@
   --font-paralaxe: "Passion One", "cursive";
   --font-texto-paralaxe: "Sriracha", "cursive";
 }
+/* Caixa lateral de FeedBack */
 .feedback-box {
   width: 2.2rem;
   height: 8rem;
@@ -29,25 +35,22 @@
   top: 50%;
   transform: rotate(-90deg) translateX(-30%);
 }
+
+/* Style para tag main que abrange todas sessões do site*/
 main {
-  max-width: 1500px;
-  max-height: 900px;
-  height: 100%;
+  max-width: 1366px;
   width: 100%;
-  background-color: #fffacd;
 }
 main > section.featured-books {
-  margin: 0 1rem;
-  height: 500px;
+  min-height: 500px;
+  background-color: #fffacd;
 }
-section.featured-books > .week-books-box {
-  width: 100%;
+main > section.featured-books > .week-books-box {
   display: flex;
   flex-direction: column;
 }
 .week-books-box > .title {
   display: flex;
-  flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   padding: 1rem 1rem;
@@ -55,12 +58,11 @@ section.featured-books > .week-books-box {
 .title h1 {
   font-family: Arial, Helvetica, sans-serif;
   text-transform: uppercase;
-  font-size: 25px;
+  font-size: 2em;
   font-weight: bold;
   color: #000;
 }
 .title .show-more {
-  text-align: center;
   background-color: #000;
   margin-left: 0.5rem;
   padding: 0.2rem;
@@ -76,7 +78,6 @@ section.featured-books > .week-books-box {
   text-decoration: underline;
 }
 .week-books-box > .books-box {
-  width: 55%;
   display: grid;
   padding: 0 1rem;
   column-gap: 15px;
@@ -86,33 +87,33 @@ section.featured-books > .week-books-box {
   transition: width 1.5s ease;
 }
 .books-box > .container-book-single {
-  width: 226px;
   height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   transition: width 1.5s linear;
+  -webkit-box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.75);
+  border: var(--border);
 }
 .container-book-single > .book-cover {
   height: 100%;
   width: 100%;
   background-image: url("../assets-images-for-genres/img-book-cover1.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
 }
 .container-book-single > .book-information {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  width: inherit;
 }
 .book-information > h3 {
   margin: 0 0.5rem;
   font-size: 1.5rem;
   line-height: 1.5;
   font-family: Arial, Helvetica, sans-serif;
-  color: #000;
+  color: #070808;
 }
 .book-information > p {
   margin: 0.5rem 0.5rem;
@@ -123,30 +124,27 @@ section.featured-books > .week-books-box {
   color: #d9534f;
 }
 main > section.search-for-genres {
-  margin: 8.3rem 5rem 0 5rem;
-  /* background-color: #ffff99; */
+  margin: 0 5rem 0 5rem;
   background-color: #fffacd;
 }
 section.search-for-genres > .subtitle {
-  width: 50%;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
   align-items: flex-start;
   margin-left: 1.5rem;
 }
 .subtitle h1 {
   font-family: Arial, Helvetica, sans-serif;
   text-transform: uppercase;
-  font-size: 25px;
+  font-size: 2em;
   font-weight: bold;
-  color: #000;
+  color: #070808;
 }
 .subtitle a {
   text-decoration: none;
-  color: #fff;
-  font-weight: 400;
+  color: #000;
+  font-weight: 500;
   text-transform: uppercase;
+  line-height: 2.5;
   margin-left: 0.5rem;
 }
 .subtitle a:hover {
@@ -205,7 +203,7 @@ section.search-for-genres > div.genres-list {
 }
 main > section.recomendations {
   margin: 0 5rem;
-  height: 500px;
+  min-height: 400px;
   background-color: #fffacd;
 }
 section.recomendations > .week-books-recomendations {
@@ -216,23 +214,20 @@ section.recomendations > .week-books-recomendations {
 .week-books-recomendations h1 {
   font-family: Arial, Helvetica, sans-serif;
   text-transform: uppercase;
-  font-size: 25px;
+  font-size: 2em;
   font-weight: bold;
-  color: #000;
+  color: #070808;
 }
 .week-books-recomendations .recomendation-books-title {
   width: 50%;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
   align-items: center;
   padding: 1rem 0;
   margin-left: 3.9rem;
 }
 .week-books-recomendations .view-all a {
   text-decoration: none;
-  background-color: #fff;
-  font-weight: 400;
+  font-weight: 500;
   text-transform: uppercase;
   margin-left: 0.5rem;
   color: #000;
@@ -240,9 +235,8 @@ section.recomendations > .week-books-recomendations {
 .week-books-recomendations .view-all a:hover {
   text-decoration: underline;
 }
-section.recomendations > .week-books-recomendations .container-recomendations {
+.week-books-recomendations .container-recomendations {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
 }
 .container-recomendations .icon {
@@ -255,7 +249,6 @@ section.recomendations > .week-books-recomendations .container-recomendations {
   padding: 0.2rem 0;
   cursor: pointer;
   border-radius: 10px;
-  background-color: transparent;
 }
 #left {
   margin-left: 0.5rem;
@@ -269,7 +262,6 @@ section.recomendations
   .container-recomendation-books {
   width: 100%;
   display: grid;
-  padding: 0 0.5rem;
   column-gap: 15px;
   place-items: left;
   overflow-x: hidden;

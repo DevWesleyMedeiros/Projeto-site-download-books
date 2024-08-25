@@ -11,9 +11,10 @@ function creatElementsHtml(){
     divBookIcon.classList.add("book-icon");
 
     let h1 = document.createElement("h1");
+    h1.setAttribute("id", "form-title");
     let p = document.createElement("p");
 
-    h1.innerHTML = "Cadastra-se para downloads";
+    h1.innerHTML = "Cadastre-se para downloads";
     p.innerHTML = "Acesse nossa biblioteca gratuitamente";
 
     let divTitle = document.createElement("div");
@@ -48,10 +49,10 @@ function creatElementsHtml(){
 
     const attributesArrayInputPassword = [
         {
-            placeholder: "Seu melhor E-mail",
+            placeholder: "Escreva uma senha forte",
             required: "",
-            id: "input-email",
-            type: "email"
+            id: "input-password",
+            type: "password"
         }
     ]
     for (let att = 0; att < attributesArrayInputPassword.length; att++) {
