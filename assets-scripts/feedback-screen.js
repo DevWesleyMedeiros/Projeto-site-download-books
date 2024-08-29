@@ -1,3 +1,4 @@
+// CSS Manipula as container de feedback
 const stylesFeedbackScreen = {
     divContainerSendBox: `
         display: flex;
@@ -5,38 +6,34 @@ const stylesFeedbackScreen = {
         align-items: center;
         width: 100vw;
         height: 100vh;
-        background-color: #fff;
-        opacity: .9;
+        background-color: #ccc;
         z-index: 10;
         position: fixed;
         visibility: visible;
     `,
     divSendbox: `
-        max-width: auto;
-        min-width: 350px;
-        width: auto;
-        min-height: auto;
-        height: auto;
+        min-width: 430px;
+        max-width: 350px;
+        min-height: 400px;
+        max-height: 320px;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
         align-items: center;
         padding: 1.5rem 1rem;
         border-radius: 10px;
         -webkit-box-shadow: 2px 1px 18px 0px rgba(0, 0, 0, 0.75);
         -moz-box-shadow: 2px 1px 18px 0px rgba(0, 0, 0, 0.75);
         box-shadow: 2px 1px 18px 0px rgba(0, 0, 0, 0.75);
+        background-color: #fff;
     `,
     form: `
-        min-width: 350px;
-        max-width: auto;
         width: 100%;
     `,
     divfeedbackTitle: `
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: -0.5rem 0.3rem;
+        padding: 0.5rem 0.3rem;
         margin-bottom: 1rem;
         border-bottom: 1px solid black;
     `,
@@ -44,7 +41,7 @@ const stylesFeedbackScreen = {
         width: 100%;
     `,
     textArea: `
-        width: inherit;
+        width: 100%;
         padding: 0.5rem 1rem;
         border: 0.5px solid #000;
         border-radius: 5px;
@@ -52,9 +49,6 @@ const stylesFeedbackScreen = {
     containerInput: `
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        width: 100%;
         height: 5rem;
     `,
     taginputTypeEmail: `
@@ -62,6 +56,7 @@ const stylesFeedbackScreen = {
         height: 5rem;
         padding: 0.5rem;
         margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
         border-radius: 5px;
         border: 0.5px solid #000;
     `,
@@ -82,7 +77,6 @@ const stylesFeedbackScreen = {
     `
 };
 
-
 function displayFeedBackBox() {
     let divContainerSendBox = document.createElement("div");
     divContainerSendBox.setAttribute("style", stylesFeedbackScreen.divContainerSendBox);
@@ -97,62 +91,82 @@ function displayFeedBackBox() {
     divFeedbackTitle.setAttribute("style", stylesFeedbackScreen.divfeedbackTitle);
 
     let h2 = document.createElement("h2");
-    h2.innerHTML = `Feedback`;
+    h2.textContent = `Feedback`;
 
     let divIcon = document.createElement("div");
     divIcon.setAttribute("class", "fa-solid fa-circle-xmark");
     divIcon.setAttribute("id", "close");
 
+    divIcon.addEventListener('click', (evt) => {
+        if (!evt.target.closest(`#close`)) {
+            divContainerSendBox.style.visibility = "hidden";
+        }
+    });
+
     divFeedbackTitle.appendChild(h2);
     divFeedbackTitle.appendChild(divIcon);
 
     let divTextArea = document.createElement("div");
-    divTextArea.setAttribute("style", stylesFeedbackScreen.textArea);
+    divTextArea.setAttribute("style", stylesFeedbackScreen.divTextArea);
 
+    // criar um objeto para inserção das propriedades da tag textarea
+    const textareaProperty = {
+        type: "text",
+        id: "text",
+        name: "text-area",
+        cols: 15,
+        rows: 10,
+        required: "",
+        placeholder: "Envie-nos sua sugestão"
+    };
     let textArea = document.createElement("textarea");
-    textArea.setAttribute("type", "text");
-    textArea.setAttribute("id", "text");
-    textArea.setAttribute("name", "text-area");
-    textArea.setAttribute("cols", "15");
-    textArea.setAttribute("rows", "10");
-    textArea.setAttribute("required", "");
-    textArea.setAttribute("placeholder", "Envie-nos sua sugestão");
-
+    for (const [key, value] of Object.entries(textareaProperty)) {
+        textArea.setAttribute(key, value);
+    }
     divTextArea.appendChild(textArea);
 
     let divContainerInput = document.createElement("div");
     divContainerInput.setAttribute("style", stylesFeedbackScreen.containerInput);
 
+    // criar um objeto para inserção das propriedades da inputEmail
+    const inputEmailProperty = {
+        style: stylesFeedbackScreen.taginputTypeEmail,
+        type: "email",
+        id: "email",
+        name: "email",
+        class: "input-email",
+        required: "",
+        placeholder: "Seu melhor Email"
+    };
     let inputEmail = document.createElement("input");
-    inputEmail.setAttribute("style", stylesFeedbackScreen.taginputTypeEmail);
-    inputEmail.setAttribute("type", "email");
-    inputEmail.setAttribute("id", "email");
-    inputEmail.setAttribute("name", "email");
-    inputEmail.setAttribute("class", "input-email");
-    inputEmail.setAttribute("required", "");
-    inputEmail.setAttribute("placeholder", "Seu melhor Email");
+    for (const [key, value] of Object.entries(inputEmailProperty)) {
+        if (key === 'style') {
+            inputEmail.setAttribute('style', value);
+        } else {
+            inputEmail.setAttribute(key, value);
+        }
+    }
 
     let button = document.createElement("button");
     button.setAttribute("style", stylesFeedbackScreen.tagbutton);
-    button.innerHTML = `Enviar`;
+    button.textContent = `Enviar`;
 
     let p = document.createElement("p");
     p.setAttribute("style", stylesFeedbackScreen.tagp);
-    p.innerHTML = `Powered by Wesley Medeiros`;
+    p.textContent = `Powered by Wesley Medeiros`;
 
-    divContainerInput.appendChild(inputEmail);
-    divContainerInput.appendChild(button);
-    divContainerInput.appendChild(p);
-
-    form.appendChild(divFeedbackTitle);
-    form.appendChild(divTextArea);
-    form.appendChild(divContainerInput);
+    let arrayChildrenContainerInput = [inputEmail, button, p];
+    arrayChildrenContainerInput.forEach((child) => {
+        divContainerInput.appendChild(child);
+    });
+    let arrayChildrenForm = [divFeedbackTitle, divTextArea, divContainerInput];
+    arrayChildrenForm.forEach((child) => {
+        form.appendChild(child);
+    });
 
     divSendbox.appendChild(form);
     divContainerSendBox.appendChild(divSendbox);
-
     document.body.prepend(divContainerSendBox);
 }
 
 export { displayFeedBackBox };
-
