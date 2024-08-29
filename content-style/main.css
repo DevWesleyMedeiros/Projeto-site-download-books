@@ -281,7 +281,39 @@ section.recomendations
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.75);
   border: var(--border);
 }
-
+main > section.my-recomendation{
+    display: flex;
+    flex-direction: column;
+    max-width: 1366px;
+    width: 100%;
+    min-height: 250px;
+    background-color: #fffacd;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+}
+section.my-recomendation > .myPreference-title{
+    width: 100%;
+    height: 50px;
+}
+.myPreference-title h1{
+    padding: .5rem 0;
+}
+section.my-recomendation > .recomendations-of-books{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 15px;
+    margin: 0 1rem;
+}
+section.my-recomendation > .recomendations-of-books > .myPreference{
+    width: 226px;
+    height: 300px;
+    display: flex;
+    -webkit-box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.75);
+    border: 1px solid #070808;
+}
 /* CONTROLE DA RESPONSIVIDADE */
 @media screen and (max-width: 760px) {
   section.search-for-genres > div.genres-list {

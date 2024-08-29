@@ -188,7 +188,6 @@ header > .header-background-images {
   max-width: 1366px;
   height: 100%;
   max-height: 700px;
-  position: relative;
 }
 .header-background-images > h1 {
   text-align: center;

@@ -7,12 +7,12 @@ const stylesFeedbackScreen = {
         width: 100vw;
         height: 100vh;
         background-color: #ccc;
-        z-index: 10;
-        position: fixed;
         visibility: visible;
+        position: fixed;
+        z-index: 11;
     `,
     divSendbox: `
-        min-width: 430px;
+        min-width: 450px;
         max-width: 350px;
         min-height: 400px;
         max-height: 320px;
@@ -25,6 +25,7 @@ const stylesFeedbackScreen = {
         -moz-box-shadow: 2px 1px 18px 0px rgba(0, 0, 0, 0.75);
         box-shadow: 2px 1px 18px 0px rgba(0, 0, 0, 0.75);
         background-color: #fff;
+        box-sizing: border-box;
     `,
     form: `
         width: 100%;
@@ -38,13 +39,15 @@ const stylesFeedbackScreen = {
         border-bottom: 1px solid black;
     `,
     divTextArea: `
-        width: 100%;
+        border: 1px solid #000;
     `,
     textArea: `
-        width: 100%;
         padding: 0.5rem 1rem;
-        border: 0.5px solid #000;
         border-radius: 5px;
+        border: 1px solid #ccc;
+        outline: none;
+        width: 100%;
+        risize: none;
     `,
     containerInput: `
         display: flex;
@@ -81,14 +84,15 @@ function displayFeedBackBox() {
     let divContainerSendBox = document.createElement("div");
     divContainerSendBox.setAttribute("style", stylesFeedbackScreen.divContainerSendBox);
 
-    let divSendbox = document.createElement("div");
-    divSendbox.setAttribute("style", stylesFeedbackScreen.divSendbox);
+    let DivSendbox = document.createElement("div");
+    DivSendbox.setAttribute("style", stylesFeedbackScreen.divSendbox);
 
     let form = document.createElement("form");
     form.setAttribute("style", stylesFeedbackScreen.form);
 
     let divFeedbackTitle = document.createElement("div");
     divFeedbackTitle.setAttribute("style", stylesFeedbackScreen.divfeedbackTitle);
+    divFeedbackTitle.setAttribute("class", "feedback-title")
 
     let h2 = document.createElement("h2");
     h2.textContent = `Feedback`;
@@ -98,9 +102,7 @@ function displayFeedBackBox() {
     divIcon.setAttribute("id", "close");
 
     divIcon.addEventListener('click', (evt) => {
-        if (!evt.target.closest(`#close`)) {
-            divContainerSendBox.style.visibility = "hidden";
-        }
+        divContainerSendBox.style.visibility = "hidden";
     });
 
     divFeedbackTitle.appendChild(h2);
@@ -109,7 +111,8 @@ function displayFeedBackBox() {
     let divTextArea = document.createElement("div");
     divTextArea.setAttribute("style", stylesFeedbackScreen.divTextArea);
 
-    // criar um objeto para inserção das propriedades da tag textarea
+    let textArea = document.createElement("textarea");
+    textArea.setAttribute("style", stylesFeedbackScreen.textArea);
     const textareaProperty = {
         type: "text",
         id: "text",
@@ -119,16 +122,20 @@ function displayFeedBackBox() {
         required: "",
         placeholder: "Envie-nos sua sugestão"
     };
-    let textArea = document.createElement("textarea");
-    for (const [key, value] of Object.entries(textareaProperty)) {
-        textArea.setAttribute(key, value);
+
+    for (let key in textareaProperty) {
+        if (textareaProperty.hasOwnProperty(key)) {
+            textArea.setAttribute(key, textareaProperty[key]);
+        }
     }
+    setTimeout(() => {
+        textArea.focus();
+    }, 100);
     divTextArea.appendChild(textArea);
 
     let divContainerInput = document.createElement("div");
     divContainerInput.setAttribute("style", stylesFeedbackScreen.containerInput);
 
-    // criar um objeto para inserção das propriedades da inputEmail
     const inputEmailProperty = {
         style: stylesFeedbackScreen.taginputTypeEmail,
         type: "email",
@@ -138,12 +145,11 @@ function displayFeedBackBox() {
         required: "",
         placeholder: "Seu melhor Email"
     };
+
     let inputEmail = document.createElement("input");
-    for (const [key, value] of Object.entries(inputEmailProperty)) {
-        if (key === 'style') {
-            inputEmail.setAttribute('style', value);
-        } else {
-            inputEmail.setAttribute(key, value);
+    for (let key in inputEmailProperty) {
+        if (inputEmailProperty.hasOwnProperty(key)) {
+            inputEmail.setAttribute(key, inputEmailProperty[key]);
         }
     }
 
@@ -159,13 +165,15 @@ function displayFeedBackBox() {
     arrayChildrenContainerInput.forEach((child) => {
         divContainerInput.appendChild(child);
     });
+
     let arrayChildrenForm = [divFeedbackTitle, divTextArea, divContainerInput];
     arrayChildrenForm.forEach((child) => {
         form.appendChild(child);
     });
 
-    divSendbox.appendChild(form);
-    divContainerSendBox.appendChild(divSendbox);
+    DivSendbox.appendChild(form);
+    divContainerSendBox.appendChild(DivSendbox);
+
     document.body.prepend(divContainerSendBox);
 }
 
