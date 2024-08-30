@@ -78,6 +78,7 @@ main > section.featured-books > .week-books-box {
   text-decoration: underline;
 }
 .week-books-box > .books-box {
+  width: 55%;
   display: grid;
   padding: 0 1rem;
   column-gap: 15px;
@@ -285,11 +286,11 @@ main > section.my-recomendation{
     display: flex;
     flex-direction: column;
     max-width: 1366px;
-    width: 100%;
     min-height: 250px;
     background-color: #fffacd;
-    flex-wrap: nowrap;
+    padding-bottom: 1rem;
     overflow-x: hidden;
+    position: relative;
 }
 section.my-recomendation > .myPreference-title{
     width: 100%;
@@ -301,9 +302,11 @@ section.my-recomendation > .myPreference-title{
 section.my-recomendation > .recomendations-of-books{
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(10, 1fr);
     column-gap: 15px;
     margin: 0 1rem;
+    overflow-x: scroll;
+    animation: slide-animation 1s infinite;
 }
 section.my-recomendation > .recomendations-of-books > .myPreference{
     width: 226px;
@@ -313,6 +316,13 @@ section.my-recomendation > .recomendations-of-books > .myPreference{
     -moz-box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.75);
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.75);
     border: 1px solid #070808;
+}
+@keyframes slide-animation {
+    0% {transform: translateX(0);}
+    25% {transform: translateX(-100);}
+    50% {transform: translateX(-200);}
+    75% {transform: translateX(-300);}
+    100% {transform: translateX(0);}
 }
 /* CONTROLE DA RESPONSIVIDADE */
 @media screen and (max-width: 760px) {

@@ -1,14 +1,14 @@
+//Script que controla a criação dos livros em destaque
+
 const containerRecomendations = document.querySelector(".container-recomendations");
 const containerRecomendationBooks = document.querySelector(".container-recomendation-books");
 const icons = [...document.querySelectorAll(".icon")];
 
 let sliderIndex = 0;
-
 let divsBookSingle = 10;
 for (let d = 0; d < divsBookSingle; d++) {
   createDiv();
 }
-
 let GridTemplateColumns = `repeat(${divsBookSingle}, 1fr)`;
 containerRecomendationBooks.style.gridTemplateColumns = GridTemplateColumns;
 

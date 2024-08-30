@@ -1,11 +1,11 @@
 function createBooksCoverContainers(valor) {
     let arrayElements = [];
-
     for (let d = 0; d < valor; d++) {
         arrayElements.push(creatElementsDiv());
     }
     return arrayElements;
 }
+// Cria e coloca os valores das divs em destaque
 function creatElementsDiv() {
     let divBookSingle = document.createElement("div");
     let divBookCover = document.createElement("div");
@@ -28,28 +28,29 @@ function creatElementsDiv() {
     pPrice.innerHTML = `R$00,00`;
 
     let arrayChild = [h3, pAuthor, pPrice];
-
     arrayChild.forEach(function (child) {
         divBookInformation.appendChild(child);
     });
-
     let arrayDiv = [divBookCover, divBookInformation];
-
     arrayDiv.forEach(function (child) {
         divBookSingle.appendChild(child);
     });
     return divBookSingle;
+    // Final da criação dos livros em destaque
 }
+
 $(document).ready(function () {
-    
     let booksQuantity = 10
+    //booksQuantity será o valor que minha API irá retornar para a seção livros em destaque
+
     let gridRepeat = `repeat(${booksQuantity}, 1fr)`
     let BooksFeaturedQuantity = createBooksCoverContainers(booksQuantity);
     $('.books-box').css('grid-template-columns', gridRepeat)
 
-    showMore();
     showLess();
-
+    showMore();
+    
+    //Função que mostra mais ou menos na seção livros em destaques
     function showMore() {
         $('#show-more-books').click(function (e) {
             e.preventDefault();
@@ -68,22 +69,20 @@ $(document).ready(function () {
     }
     $('.books-box').append(BooksFeaturedQuantity);
 
+    // Funções que vão manipular a criação do efeito de clicar e arrastar manipulando as posições do slidder
     let isDrag = false;
-
-    StartMoveContainers();
-    stopMoveContainers();
-
     function StartMoveContainers() {
         $('.container-book-single').mousedown(function () {
             isDrag = true;
         });
-
         $(document).mousemove(function (event) {
             if (isDrag) {
                 moveElements(event);
             }
         });
     }
+    StartMoveContainers();
+
     function stopMoveContainers() {
         $(document).mouseup(function () {
             isDrag = false;
@@ -92,7 +91,12 @@ $(document).ready(function () {
     function moveElements(event) {
         let fatherContainer = $('.books-box');
         let containerScrollLeft = fatherContainer.scrollLeft() - event.originalEvent.movementX;
-
         fatherContainer.scrollLeft(containerScrollLeft);
+    }
+    stopMoveContainers();
+
+    // Função que cria o slidder automático
+    function moveSlidder(params) {
+        
     }
 });
