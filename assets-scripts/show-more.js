@@ -5,8 +5,14 @@ function createBooksCoverContainers(valor) {
     }
     return arrayElements;
 }
-// Cria e coloca os valores das divs em destaque
+
 function creatElementsDiv() {
+    function createDivsElement(valor){
+        for (let index = 0; index < valor; index++) {
+            let divDomElement = document.createElement("div");
+            return divDomElement;
+        }
+    }
     let divBookSingle = document.createElement("div");
     let divBookCover = document.createElement("div");
     let divBookInformation = document.createElement("div");
@@ -36,21 +42,15 @@ function creatElementsDiv() {
         divBookSingle.appendChild(child);
     });
     return divBookSingle;
-    // Final da criação dos livros em destaque
 }
 
 $(document).ready(function () {
     let booksQuantity = 10
-    //booksQuantity será o valor que minha API irá retornar para a seção livros em destaque
 
     let gridRepeat = `repeat(${booksQuantity}, 1fr)`
     let BooksFeaturedQuantity = createBooksCoverContainers(booksQuantity);
     $('.books-box').css('grid-template-columns', gridRepeat)
 
-    showLess();
-    showMore();
-    
-    //Função que mostra mais ou menos na seção livros em destaques
     function showMore() {
         $('#show-more-books').click(function (e) {
             e.preventDefault();
@@ -59,6 +59,8 @@ $(document).ready(function () {
             $('.books-box').css('width', '100%');
         });
     }
+    showMore();
+
     function showLess() {
         $('#show-less-books').click(function (e) {
             e.preventDefault();
@@ -67,9 +69,9 @@ $(document).ready(function () {
             $('.books-box').css('width', '55%');
         });
     }
+    showLess();
     $('.books-box').append(BooksFeaturedQuantity);
 
-    // Funções que vão manipular a criação do efeito de clicar e arrastar manipulando as posições do slidder
     let isDrag = false;
     function StartMoveContainers() {
         $('.container-book-single').mousedown(function () {
@@ -94,9 +96,21 @@ $(document).ready(function () {
         fatherContainer.scrollLeft(containerScrollLeft);
     }
     stopMoveContainers();
-
-    // Função que cria o slidder automático
-    function moveSlidder(params) {
-        
-    }
 });
+
+// Função que cria o slidder automático
+function moveSlidder() {
+    const slidderContainer = document.querySelector(".recomendation-of-books");
+    let currentIndex = 0;
+    let arraySlidders = [...document.querySelectorAll(".myPreference")];
+    let totalSlidders = arraySlidders.length
+
+    setInterval(() => {
+        currentIndex++;
+        if (currentIndex >= totalSlidders) {
+            currentIndex = 0;
+        }
+        slidderContainer.style.transform = `translateX(-${currentIndex * 20}%)`;
+    }, 5000);
+}
+moveSlidder();

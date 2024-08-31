@@ -3,9 +3,8 @@ $(function () {
     var delay = 10000;
     var currentIndex = 0;
 
-    initialSlider();
     clickSlider();
-
+    
     function initialSlider() {
         var spansContainer = $('.header-background-images > .spans-container');
         for (let s = 0; s < maximunIndex; s++) {
@@ -20,6 +19,8 @@ $(function () {
             toggleSlider();
         }, delay);
     }
+    initialSlider();
+
     function toggleSlider() {
         $('.header-background-images > img').eq(currentIndex).stop().fadeOut(1000);
         currentIndex++;

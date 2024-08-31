@@ -2,7 +2,6 @@
 
 const containerRecomendations = document.querySelector(".container-recomendations");
 const containerRecomendationBooks = document.querySelector(".container-recomendation-books");
-const icons = [...document.querySelectorAll(".icon")];
 
 let sliderIndex = 0;
 let divsBookSingle = 10;
@@ -19,8 +18,8 @@ function createDiv() {
   return containerRecomendations;
 }
 
-moveSlider();
-
+// Slider recomendados da semana
+const icons = [...document.querySelectorAll(".icon")];
 function moveSlider() {
   icons.forEach((icon) => {
     if (icon.id === "right") {
@@ -44,3 +43,4 @@ function moveSlider() {
     });
   });
 }
+moveSlider();

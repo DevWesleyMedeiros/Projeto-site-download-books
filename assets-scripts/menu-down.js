@@ -1,7 +1,6 @@
 import { creatElementsHtml } from "./login-screen.js";
 import { displayFeedBackBox } from "./feedback-screen.js";
 
-
 $(document).ready(()=>{
     $('#icon-down').click((evt)=>{
         $('#icon-down').hide(10);
@@ -26,7 +25,6 @@ $(document).ready(()=>{
         }, 1500);
     })
 
-    //Chamada para função que cria o menu feedback
     $('.feedback-box').click(function () {
         displayFeedBackBox();
     });
