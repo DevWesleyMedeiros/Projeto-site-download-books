@@ -1,0 +1,94 @@
+/* CONTROLE DA RESPONSIVIDADE */
+@media screen and (max-width: 760px) {
+    header {
+      min-height: 100%;
+    }
+    .header-background-images {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      margin: 0.5rem;
+    }
+    header > .header-background-images > h1,
+    header > .header-background-images > p {
+      position: relative;
+      top: 45%;
+      left: 50%;
+      padding: 0 1.5rem;
+      margin: 10px 0;
+    }
+    header > .header-background-images > h1 {
+      font-size: 25px;
+      text-align: center;
+    }
+    header > .header-background-images > p {
+      font-size: 15px;
+      text-align: center;
+    }
+    nav {
+      border: var(--border);
+      display: block;
+    }
+    .external-books-sites-container {
+      display: block;
+      border: var(--border);
+    }
+    .spans-container {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      position: relative;
+      left: 50%;
+    }
+    .search-bar {
+      flex-direction: column;
+      width: 100%;
+      border: 1px solid red;
+    }
+    .container-search-bar {
+      display: block;
+      width: 100%;
+    }
+    .animation {
+      display: flex;
+      padding-left: 0;
+      width: 100%;
+      margin: 0;
+    }
+    .container-discover-genres {
+      width: 100%;
+      grid-template-rows: repeat(3, 1fr);
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      z-index: 2;
+    }
+  }
+  @media screen and (max-width: 383px) {
+    .header-background-images {
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin: 0;
+      top: -20%;
+      transform: none;
+    }
+    header > .header-background-images > h1,
+    header > .header-background-images > p {
+      top: 50%;
+      margin: 10px 0;
+    }
+    header > .header-background-images > h1 {
+      font-size: 20px;
+      text-align: left;
+      padding-left: 0.5rem;
+    }
+    header > .header-background-images > p {
+      font-size: 15px;
+      text-align: left;
+      padding-left: 0.5rem;
+    }
+    .spans-container > span {
+      margin: 0.5rem;
+    }
+  }

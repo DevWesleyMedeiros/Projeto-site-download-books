@@ -1,0 +1,40 @@
+{
+  "name": "download_de_livros_gratis",
+  "version": "1.0.0",
+  "description": "Projeto para baixar livros, como licenças públicas, grátis",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevWesleyMedeiros/Projeto-site-download-books.git"
+  },
+  "keywords": [
+    "livros-gratuitos",
+    "download-de-livros",
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "jQuery",
+    "Bootstrap",
+    "site-responsivo",
+    "sliders",
+    "Ajax",
+    "API",
+    "frontend"
+  ],
+  "author": "Wesley Medeiros",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DevWesleyMedeiros/Projeto-site-download-books/issues"
+  },
+  "homepage": "https://github.com/DevWesleyMedeiros/Projeto-site-download-books#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "jquery": "^3.7.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  }
+}

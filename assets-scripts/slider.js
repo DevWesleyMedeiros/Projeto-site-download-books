@@ -1,3 +1,4 @@
+import $ from "../node_modules/jquery.js";
 $(function () {
     var maximunIndex = $('.header-background-images > img').length;
     var delay = 10000;
