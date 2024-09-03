@@ -92,3 +92,51 @@
       margin: 0.5rem;
     }
   }
+  /* CONTROLE DA RESPONSIVIDADE */
+@media screen and (max-width: 760px) {
+    section.search-for-genres > div.genres-list {
+      grid-template-columns: repeat(2, 2fr);
+    }
+    .box-genre .genre-title {
+      text-align: center;
+      font-size: 4vw;
+      position: absolute;
+    }
+    section.search-for-genres > .subtitle {
+      display: block;
+      margin: 0 0;
+      width: 50%;
+      padding: 0 0;
+    }
+    .week-books-box > .title {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .title h1 {
+      margin-bottom: 0.5rem;
+      font-size: 20px;
+    }
+    .title .show-more {
+      margin: 0;
+    }
+    .subtitle h1 {
+      width: 100%;
+      text-align: center;
+      font-size: 15px;
+      margin: 0.2rem;
+    }
+  }
+  @media screen and (max-width: 560px) {
+    section.search-for-genres > div.genres-list {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .title h1 {
+      text-align: left;
+      font-size: 15px;
+    }
+    .box-genre .genre-title {
+      text-align: center;
+      font-size: 6vw;
+    }
+  }
+  
