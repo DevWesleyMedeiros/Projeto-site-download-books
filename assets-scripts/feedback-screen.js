@@ -152,7 +152,6 @@ function displayFeedBackBox() {
             inputEmail.setAttribute(key, inputEmailProperty[key]);
         }
     }
-
     let button = document.createElement("button");
     button.setAttribute("style", stylesFeedbackScreen.tagbutton);
     button.textContent = `Enviar`;

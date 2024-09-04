@@ -645,3 +645,44 @@ section.most-read > .most-read-slidderContainer > .most-read-recomendation{
     90% {transform: translateX(900%);}
     100% {transform: translateX(0);}
 }
+.footer{
+    max-width: 1366px;
+    width: 100%;
+    min-height: 250px;
+    background-image: linear-gradient(to top, #333333, #8010e8, #7d25cf, #bb4ee7);
+}
+.content-socialMidia{
+    min-height: 200px;
+}
+.container-terms{
+    min-height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.about-us{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.about-us a{
+    color: #bfb9b9;
+    font-size: 1.2em;
+    text-decoration: none;
+    margin-right: 5rem;
+    transition: 1.5s ease-in-out steps(0, 5);
+    transition-delay: 1s;
+}
+.about-us a:hover{
+    border: 1px solid #bfb9b9;
+}
+.social-midias{
+    display: flex;
+    align-items: center;
+}
+.social-midias p{
+    color: #bfb9b9;
+    font-size: 1.2em;
+    text-decoration: none;
+    margin-left: 5rem;
+}
