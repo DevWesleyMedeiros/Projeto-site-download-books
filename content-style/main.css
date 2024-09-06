@@ -657,8 +657,9 @@ section.most-read > .most-read-slidderContainer > .most-read-recomendation{
 .container-terms{
     min-height: 50px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    border-top: 1px solid #cccccc9d;
 }
 .about-us{
     display: flex;
@@ -670,19 +671,37 @@ section.most-read > .most-read-slidderContainer > .most-read-recomendation{
     font-size: 1.2em;
     text-decoration: none;
     margin-right: 5rem;
-    transition: 1.5s ease-in-out steps(0, 5);
-    transition-delay: 1s;
-}
-.about-us a:hover{
-    border: 1px solid #bfb9b9;
 }
 .social-midias{
     display: flex;
-    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.social-midias ul{
+    list-style-type: none;
+    text-align: left;
+}
+.social-midias ul li a{
+    margin-left: 0.5rem;
+    font-size: 24px;
+    text-decoration: none;
+    color: #bfb9b9;
+}
+.social-midias ul li i{
+    font-size: 1.5em;
 }
 .social-midias p{
     color: #bfb9b9;
     font-size: 1.2em;
     text-decoration: none;
-    margin-left: 5rem;
+    margin-left: 2rem;
+}
+.copyright p{
+    color: #d4d0d0;
+    font-size: 1.2em;
+}
+.privace-terms p{
+    color: #d4d0d0;
+    font-size: 1.2em;
 }
