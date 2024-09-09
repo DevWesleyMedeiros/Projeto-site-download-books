@@ -1,7 +1,12 @@
 {
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.6.0",
+    "axios": "^1.7.7",
     "bootstrap": "^5.3.3",
     "jquery": "^3.7.1"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.9.36",
+    "typescript": "^5.6.2"
   }
 }
