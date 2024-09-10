@@ -326,3 +326,5 @@ Verifique o Console do Navegador: Abra as ferramentas de desenvolvedor do navega
 Ordem dos Scripts: Certifique-se de que o jQuery é carregado antes de qualquer script que dependa dele. A ordem dos scripts no HTML é importante.
 
 Seguindo esses passos, você deve ser capaz de garantir que jQuery funcione corretamente no seu projeto após mover a referência de CDN para arquivos locais.
+
+ Criar uma dependência de desenvolvimento typescript, no meu projeto, serve uma vez que o meu browser não entende Typescritp, mas JavaScript, portanto criar uma dependência de desenvolvimento serva para ter somente na minha máquina o código TS, mas converter para JS para rodar no meu projeto
