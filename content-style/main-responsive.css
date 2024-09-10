@@ -27,12 +27,10 @@
       text-align: center;
     }
     nav {
-      border: var(--border);
       display: block;
     }
     .external-books-sites-container {
       display: block;
-      border: var(--border);
     }
     .spans-container {
       display: flex;
@@ -44,7 +42,6 @@
     .search-bar {
       flex-direction: column;
       width: 100%;
-      border: 1px solid red;
     }
     .container-search-bar {
       display: block;
@@ -92,7 +89,6 @@
       margin: 0.5rem;
     }
   }
-  /* CONTROLE DA RESPONSIVIDADE */
 @media screen and (max-width: 760px) {
     section.search-for-genres > div.genres-list {
       grid-template-columns: repeat(2, 2fr);
