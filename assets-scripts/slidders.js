@@ -50,6 +50,7 @@ function creatElementsDiv() {
     }
     let divBookSingle = document.createElement("div");
     let divBookCover = document.createElement("div");
+    divBookCover.textContent = "IMAGEM DO LIVRO"; // Propriedade temporária
     let divBookInformation = document.createElement("div");
 
     divBookSingle.classList.add("container-book-single");
@@ -64,11 +65,11 @@ function creatElementsDiv() {
     pAuthor.classList.add("author-book-name");
     pAuthor.innerText = `Nome do autor`;
 
-    let pPrice = document.createElement("p");
-    pPrice.classList.add("book-price");
-    pPrice.innerHTML = `R$00,00`;
+    let bookCategory = document.createElement("p");
+    bookCategory.classList.add("book-category");
+    bookCategory.innerHTML = `Tema do livro`;
 
-    let arrayChild = [h3, pAuthor, pPrice];
+    let arrayChild = [h3, pAuthor, bookCategory];
     arrayChild.forEach(function (child) {
         divBookInformation.appendChild(child);
     });
@@ -218,14 +219,14 @@ $(function () {
         $(title).html("");
         $(text).html("");
         if (index === 1) {
-            $(title).html("BestSellers livres e com descontos");
-            $(text).html("Junte-se à comunidade de mais de 150.000 leitores com BestSellers gratuítos e com descontos diretamente na sua caixa de E-mail.");
+            $(title).html("Diversos BestSellers gratuítos");
+            $(text).html("Junte-se à comunidade de leitores e descubra vários BestSellers gratuítos e licença pública.");
         } else if (index === 2){
             $(title).html("O Guia completo para livros grátis");
-            $(text).html("Não sabe o que ler? Explore nossos catálogos de livros de domínio público. Alguns deles estão escondidos nas nossas biblioteca.");
+            $(text).html("Não sabe o que ler? Explore nossos catálogos de livros de domínio público");
         }else{
             $(title).html("Muitos Livros para downloads 100% de graça");
-            $(text).html("Bem-vindo à biblioteca de livros. Possuímos mais de 150.000 livros que agurdam ser descobertos por você.");
+            $(text).html("Bem-vindo à biblioteca de livros. Possuímos muitos livros que agurdam ser descobertos por você.");
         }
     }
 });
@@ -235,7 +236,7 @@ $(function () {
 const containerRecomendations = document.querySelector(".container-recomendations");
 const containerRecomendationBooks = document.querySelector(".container-recomendation-books");
 
-let divsBookSingle = 20;
+let divsBookSingle = 11;
 let sliderIndex = 0;
 
 for (let d = 1; d < divsBookSingle + 1; d++) {

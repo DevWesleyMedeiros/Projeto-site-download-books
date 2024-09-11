@@ -346,9 +346,10 @@ main > section.featured-books > .week-books-box {
 .container-book-single > .book-cover {
   height: 100%;
   width: 100%;
-  background-image: url("../assets-images-for-genres/img-book-cover1.jpg");
+  background-image: url("IMAGEM CAPA LIVRO"); /* vai ser alterado como link das capas que vem da API*/
   background-position: center;
   background-size: cover;
+  text-align: center;
 }
 .container-book-single > .book-information {
   display: flex;
@@ -366,7 +367,7 @@ main > section.featured-books > .week-books-box {
   color: #777;
   font-size: 1.5em;
 }
-.book-information > p.book-price {
+.book-information > p.bookCategory {
   color: #d9534f;
 }
 main > section.search-for-genres {
@@ -645,6 +646,56 @@ section.most-read > .most-read-slidderContainer > .most-read-recomendation{
     90% {transform: translateX(900%);}
     100% {transform: translateX(0);}
 }
+main > section.author-information{
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #fffacd;
+}
+section.author-information > .about-author{
+    display: flex;
+    justify-content: flex-start;
+}
+.about-author .input-url{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+}
+.input-url .input-search-about-author{
+    width: 100%;
+    height: 50px;
+    outline: none;
+    border: 1px solid #cccccc9d;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+.input-url input.search-about-author{
+    width: 100%;
+    height: 50px;
+    border: 1px solid #cccccc9d;
+    padding: 0.5rem;
+    border-radius: 10px;
+    margin-top: 0.5rem;
+}
+.image-left{
+    margin: 1rem 1rem;
+    transition: all .5s ease-in-out;
+}
+.image-left:hover{
+    transform: scale(1.1);
+}
+.author-breafing{
+    text-align: justify;
+    font-size: 1.5em;
+    padding: 0.5rem;
+    color: #070808;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 /* FOOTER STYLE */
 .footer{
     max-width: 1366px;
