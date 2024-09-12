@@ -169,9 +169,11 @@ function creatElementsHtml(){
     divFatherContainer.appendChild(divContainerForm);
 
     divFatherContainer.addEventListener("click", function (evt) {
+        let buttonLogin = document.querySelector('.sign-in-button > button');
         if (!evt.target.closest('.container-form')) {
             let divBackGround = document.getElementById("background");
             divBackGround.style.visibility = "hidden";
+            buttonLogin.style.display = "block";
         }
     });
     function formEmailValidations(stringEmail) {

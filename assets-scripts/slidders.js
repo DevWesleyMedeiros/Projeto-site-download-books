@@ -18,7 +18,10 @@ $(document).ready(()=>{
         })
         $('#icon-down').show(10);
     });
+
+    //EFEITO DE CARREGAMENTO AO CLICAR
     $('#button-register').click(function () {
+        $('.sign-in-button > button').css('display', 'none');
         $('.load').css('display', 'block');
         setTimeout(() => {
             creatElementsHtml();
