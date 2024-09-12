@@ -32,7 +32,23 @@ $(document).ready(()=>{
     $('.feedback-box').click(function () {
         displayFeedBackBox();
     });
-})
+
+    // EFEITO DE SCROLL AUTOMÁTICO
+    $('a[role=button]').click(function(e) {
+        e.preventDefault();
+        let href = $(this).attr('href');
+        let offsetTop = $(href).offset().top;
+        $('html, body').animate({
+            'scrollTop': offsetTop
+        }, 2000);
+    });
+    
+    //EFEITO SCROLL AUTOMÁTICO CIMA
+    $('.scrollUp').click((e)=>{
+        e.preventDefault();
+        $('html, body').animate({scrollTop: 0}, 1000);
+    })
+});
 // FINAL DO SCRIPT QUE CRIA MENU DOWN
 
 // SCRIPT PARA CONTAINER LIVROS EM DESTAQUE
@@ -163,7 +179,7 @@ function moveSlidderRight() {
 
     setInterval(() => {
         currentIndexRight++;
-        if (currentIndexRightRight >= totalSliddersRight) {
+        if (currentIndexRight >= totalSliddersRight) {
             currentIndexRight = 0;
         }
         slidderContainerRight.style.transform = `translateX(${currentIndexRight * 20}%)`;

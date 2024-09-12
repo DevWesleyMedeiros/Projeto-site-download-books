@@ -472,6 +472,21 @@ section.recomendations > .week-books-recomendations {
   padding: 1rem 0;
   margin-left: 3.9rem;
 }
+.scrollUp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
+    width: 50px;
+    height: 50px;
+    background-color: #d4cfcf;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.5s ease-in-out;
+}
+.scrollUp:hover{
+    background-color: #bfb9b9;
+}
 .week-books-recomendations .view-all a {
   text-decoration: none;
   font-weight: 500;
