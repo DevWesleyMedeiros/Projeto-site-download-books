@@ -13,6 +13,8 @@
 
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/lib.min.js" integrity="sha512-z/dvZbFZhHCi5/4UoyNwhidEOFbiN93Um+DWoaMZsH6zqifGGo0zA4bUwdf1SgV7KIPMQgiGs+05PNl8ytxweQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
     <link rel="stylesheet" href="content-style/main-responsive.css">
     <link rel="stylesheet" href="content-style/main.css">
@@ -56,6 +58,20 @@
                     </div>
                 </div>
             </div>
+            <div class="loader">
+                <div class="circle">
+                  <div class="dot"></div>
+                  <div class="outline"></div>
+                </div>
+                <div class="circle">
+                  <div class="dot"></div>
+                  <div class="outline"></div>
+                </div>
+                <div class="circle">
+                  <div class="dot"></div>
+                  <div class="outline"></div>
+                </div>
+              </div>
         </nav>
         <div class="header-background-images">
             <h1 id="title">
@@ -143,7 +159,7 @@
         </div>
     </div>
     <main>
-        <section class="featured-books">
+        <section class="featured-books" id="author-books">
             <div class="week-books-box">
                 <div class="title">
                     <h1>Livros do Autor</h1>

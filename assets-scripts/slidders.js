@@ -48,6 +48,29 @@ $(document).ready(()=>{
         e.preventDefault();
         $('html, body').animate({scrollTop: 0}, 1000);
     })
+
+    //EFEITO PARA BARRA DE PESQUISA
+    function handleAction(e) {
+        $('.loader').css("visibility", "visible");
+        $('input[type=search]').css("cursor", "not-allowed").attr("disabled", "");
+        setTimeout(() => {
+            e.preventDefault();
+            $('html, body').animate({ scrollTop: 500 }, 2000);
+            $('.loader').css("visibility", "hidden");
+            $('.container-search-bar').css("cursor", "text");
+            $('input[type=search]').css("cursor", "text").removeAttr("disabled");
+        }, 5000);
+    }
+
+    $('.search-icon').click((e) => {
+        handleAction(e);
+    });
+
+    $('input[type=search]').keypress((e) => {
+        if (e.which === 13) { // 13 é o código da tecla Enter
+            handleAction(e);
+        }
+    });
 });
 // FINAL DO SCRIPT QUE CRIA MENU DOWN
 
@@ -186,7 +209,6 @@ function moveSlidderRight() {
     }, 10000);
 }
 moveSlidderRight();
-// FUNÇÕES PARA CONTROLAR OS SLIDDERS AUTOMÁTICOS
 
 // SCRIPT QUE CONTROLA O BANNER DE SLIDDERS AUTOMÁTICO
 $(function () {
