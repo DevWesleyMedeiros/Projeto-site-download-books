@@ -58,9 +58,13 @@ $(document).ready(()=>{
         $('.loader').css("visibility", "visible");
         $('input[type=search]').css("cursor", "not-allowed").attr("disabled", "");
         if (!$('input[type=search]').val()) {
-            window.alert("Pesquise por um autor, título ou categoria");
+            $('.backgroud-msg').css("visibility", "visible");
             $('.loader').css("visibility", "hidden");
             $('input[type=search]').css("cursor", "text").removeAttr("disabled").focus();
+            $('.brutalist-card__actions').click((e)=>{
+                e.preventDefault();
+                $('.backgroud-msg').css("visibility", "hidden");
+            })
         }
         else{
             setTimeout(() => {
