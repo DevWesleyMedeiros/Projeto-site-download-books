@@ -36,11 +36,15 @@ $(document).ready(()=>{
     // EFEITO DE SCROLL AUTOMÁTICO
     $('a[role=button]').click(function(e) {
         e.preventDefault();
-        let href = $(this).attr('href');
-        let offsetTop = $(href).offset().top;
-        $('html, body').animate({
-            'scrollTop': offsetTop
-        }, 2000);
+        $('.loader').css("visibility", "visible");
+        setTimeout(()=>{
+            let href = $(this).attr('href');
+            let offsetTop = $(href).offset().top;
+            $('html, body').animate({
+                'scrollTop': offsetTop
+            }, 2000);
+            $('.loader').css("visibility", "hidden");
+        }, 5000)
     });
     
     //EFEITO SCROLL AUTOMÁTICO CIMA
@@ -53,13 +57,20 @@ $(document).ready(()=>{
     function handleAction(e) {
         $('.loader').css("visibility", "visible");
         $('input[type=search]').css("cursor", "not-allowed").attr("disabled", "");
-        setTimeout(() => {
-            e.preventDefault();
-            $('html, body').animate({ scrollTop: 500 }, 2000);
+        if (!$('input[type=search]').val()) {
+            window.alert("Pesquise por um autor, título ou categoria");
             $('.loader').css("visibility", "hidden");
-            $('.container-search-bar').css("cursor", "text");
-            $('input[type=search]').css("cursor", "text").removeAttr("disabled");
-        }, 5000);
+            $('input[type=search]').css("cursor", "text").removeAttr("disabled").focus();
+        }
+        else{
+            setTimeout(() => {
+                e.preventDefault();
+                $('html, body').animate({ scrollTop: 500 }, 2000);
+                $('.loader').css("visibility", "hidden");
+                $('.container-search-bar').css("cursor", "text");
+                $('input[type=search]').css("cursor", "text").removeAttr("disabled").val("").focus();
+            }, 5000);
+        }
     }
 
     $('.search-icon').click((e) => {
@@ -67,7 +78,7 @@ $(document).ready(()=>{
     });
 
     $('input[type=search]').keypress((e) => {
-        if (e.which === 13) { // 13 é o código da tecla Enter
+        if (e.which === 13) { 
             handleAction(e);
         }
     });
