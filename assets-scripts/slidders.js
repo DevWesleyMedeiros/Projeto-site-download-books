@@ -18,8 +18,6 @@ $(document).ready(()=>{
         })
         $('#icon-down').show(10);
     });
-
-    //EFEITO DE CARREGAMENTO AO CLICAR
     $('#button-register').click(function () {
         $('.sign-in-button > button').css('display', 'none');
         $('.load').css('display', 'block');
@@ -32,8 +30,6 @@ $(document).ready(()=>{
     $('.feedback-box').click(function () {
         displayFeedBackBox();
     });
-
-    // EFEITO DE SCROLL AUTOMÁTICO
     $('a[role=button]').click(function(e) {
         e.preventDefault();
         $('.loader').css("visibility", "visible");
@@ -46,14 +42,10 @@ $(document).ready(()=>{
             $('.loader').css("visibility", "hidden");
         }, 5000)
     });
-    
-    //EFEITO SCROLL AUTOMÁTICO CIMA
     $('.scrollUp').click((e)=>{
         e.preventDefault();
         $('html, body').animate({scrollTop: 0}, 1000);
     })
-
-    //EFEITO PARA BARRA DE PESQUISA
     function handleAction(e) {
         $('.loader').css("visibility", "visible");
         $('input[type=search]').css("cursor", "not-allowed").attr("disabled", "");
@@ -76,11 +68,9 @@ $(document).ready(()=>{
             }, 5000);
         }
     }
-
     $('.search-icon').click((e) => {
         handleAction(e);
     });
-
     $('input[type=search]').keypress((e) => {
         if (e.which === 13) { 
             handleAction(e);
@@ -342,7 +332,8 @@ function moveSlider() {
           left: sliders[sliderIndex].offsetLeft * 1,
           behavior: "smooth"
         });
-      } else if (icon.id === "right") {
+      }
+      if (icon.id === "right") {
         sliderIndex = Math.min(numSliders - 5, sliderIndex + (numSliders % 5 === 0 ? 1 : 1));
         containerRecomendationBooks.scrollTo({
           left: sliders[sliderIndex].offsetLeft * 1,
