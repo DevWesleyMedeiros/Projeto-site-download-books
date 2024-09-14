@@ -8,5 +8,10 @@
   "devDependencies": {
     "@types/axios": "^0.9.36",
     "typescript": "^5.6.2"
+  },
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "start": "node dist/index.js"
   }
 }
