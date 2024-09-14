@@ -1,15 +1,20 @@
 // CSS Manipula as container de feedback
 const stylesFeedbackScreen = {
+    backgroundFeedback: `
+        width: 100vw
+        height: 100vh;
+        background-color: #ccc;
+        z-index: 10;
+    `,
     divContainerSendBox: `
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100vw;
-        height: 100vh;
-        background-color: #ccc;
+        width: 100%;
+        height: 100%;
         visibility: visible;
         position: fixed;
-        z-index: 11;
+        z-index: 9;
     `,
     divSendbox: `
         min-width: 450px;
@@ -81,6 +86,9 @@ const stylesFeedbackScreen = {
 };
 
 function displayFeedBackBox() {
+
+    let divBackgroundFeedBack = document.createElement("div").setAttribute("style", `${stylesFeedbackScreen.backgroundFeedback}`);
+
     let divContainerSendBox = document.createElement("div");
     divContainerSendBox.setAttribute("style", stylesFeedbackScreen.divContainerSendBox);
 
@@ -172,8 +180,10 @@ function displayFeedBackBox() {
 
     DivSendbox.appendChild(form);
     divContainerSendBox.appendChild(DivSendbox);
+    divBackgroundFeedBack.appendChild(divContainerSendBox);
 
-    document.body.prepend(divContainerSendBox);
+
+    document.body.prepend(divBackgroundFeedBack);
 }
 
 export { displayFeedBackBox };

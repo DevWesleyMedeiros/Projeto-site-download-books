@@ -344,4 +344,3 @@ function moveSlider() {
   });
 }
 moveSlider();
-// FINAL DO SCRITP DA SEÇÃO SLIDER DA SEMANA
