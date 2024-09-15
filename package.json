@@ -1,17 +1,24 @@
 {
-  "dependencies": {
-    "@fortawesome/fontawesome-free": "^6.6.0",
-    "axios": "^1.7.7",
-    "bootstrap": "^5.3.3",
-    "jquery": "^3.7.1"
-  },
-  "devDependencies": {
-    "@types/axios": "^0.9.36",
-    "typescript": "^5.6.2"
-  },
-  "scripts": {
-    "build": "tsc",
-    "build:watch": "tsc --watch",
-    "start": "node dist/index.js"
+    "dependencies": {
+      "@fortawesome/fontawesome-free": "^6.6.0",
+      "axios": "^1.7.7",
+      "bootstrap": "^5.3.3",
+      "jquery": "^3.7.1"
+    },
+    "devDependencies": {
+      "@types/axios": "^0.9.36",
+      "sass": "^1.78.0",
+      "typescript": "^5.6.2",
+      "concurrently": "^9.0.1"
+    },
+    "scripts": {
+      "build:ts": "tsc",                                     
+      "build:sass": "sass src/style.scss:dist/style.css",
+      "build": "concurrently \"npm run build:ts\" \"npm run build:sass\"",
+      "start": "node dist/index.js",
+      "watch:ts": "tsc --watch",   
+      "watch:sass": "sass src/style.scss:dist/style.css --watch",
+      "watch": "concurrently \"npm run watch:ts\" \"npm run watch:sass\""
+    }
   }
-}
+  
