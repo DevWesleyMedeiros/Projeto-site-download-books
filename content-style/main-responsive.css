@@ -1,67 +1,47 @@
 /* CONTROLE DA RESPONSIVIDADE */
-@media screen and (max-width: 760px) {
+/* Breakpoints{
+-> desktop: 1024px
+-> tablet: 768px
+-> mobile: 480px} 
+*/
+
+@media screen and (max-width: 768px) {
+    body, html{
+        min-width: 700px;
+    }
     header {
-      min-height: 100%;
+        min-width: 700px;
+        border: 2px solid blue;
+        
     }
-    .header-background-images {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      margin: 0.5rem;
+    header > nav {
+        min-width: px;
+        min-height: 200px;
+        flex-direction: column;
     }
-    header > .header-background-images > h1,
-    header > .header-background-images > p {
-      position: relative;
-      top: 45%;
-      left: 50%;
-      padding: 0 1.5rem;
-      margin: 10px 0;
+    .search-bar{
+        justify-content: space-between;
+        background-color: red;
     }
-    header > .header-background-images > h1 {
-      font-size: 25px;
-      text-align: center;
+    .animation{
+        display: inline-block;
+        width: 50%;
     }
-    header > .header-background-images > p {
-      font-size: 15px;
-      text-align: center;
+    .img-animation{
+        margin-right: 0.5rem;
     }
-    nav {
-      display: block;
+    .discover-genres{
+        margin-right: 5rem;
     }
-    .external-books-sites-container {
-      display: block;
+    .container-search-bar{
+        margin-right: 5rem;
     }
-    .spans-container {
-      display: flex;
-      justify-content: flex-start;
-      flex-wrap: nowrap;
-      position: relative;
-      left: 50%;
+    .external-books-sites-container{
+        width: 100%;
+        border: 5px solid black;
     }
-    .search-bar {
-      flex-direction: column;
-      width: 100%;
-    }
-    .container-search-bar {
-      display: block;
-      width: 100%;
-    }
-    .animation {
-      display: flex;
-      padding-left: 0;
-      width: 100%;
-      margin: 0;
-    }
-    .container-discover-genres {
-      width: 100%;
-      grid-template-rows: repeat(3, 1fr);
-      position: absolute;
-      top: -50%;
-      left: -60%;
-      z-index: 2;
-    }
-  }
+
+
   @media screen and (max-width: 383px) {
     .header-background-images {
       justify-content: flex-start;
