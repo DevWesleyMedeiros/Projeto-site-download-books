@@ -6,113 +6,59 @@
 */
 
 @media screen and (max-width: 768px) {
-    body, html{
-        min-width: 700px;
+    .banner{
+        
+    }
+    main{
+        width: 100%;
+        flex-direction: column;
     }
     header {
         min-width: 700px;
-        border: 2px solid blue;
-        
     }
     header > nav {
-        min-width: px;
+        width: 100%;
         min-height: 200px;
         flex-direction: column;
     }
     .search-bar{
         justify-content: space-between;
-        background-color: red;
     }
     .animation{
         display: inline-block;
         width: 50%;
     }
-    .img-animation{
+    .img-animation, .discover-genres{
         margin-right: 0.5rem;
-    }
-    .discover-genres{
-        margin-right: 5rem;
+        margin-top: 1rem;
     }
     .container-search-bar{
         margin-right: 5rem;
     }
     .external-books-sites-container{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .header-background-images h1, p{
+        top: 50%;
+        margin: 25px 0;
+        font-size: 1.5em;
+    }
+    .title{
+        margin-left: 0;
+    }
+    .genres-list{
+        display: flex;
+        flex-direction: column;
+    }
+    .box-genre{
+        display: block;
         width: 100%;
-        border: 5px solid black;
     }
-
-
-  @media screen and (max-width: 383px) {
-    .header-background-images {
-      justify-content: flex-start;
-      align-items: flex-start;
-      margin: 0;
-      top: -20%;
-      transform: none;
+    .genres-list{
+        grid-template-columns: repeat(2, 2fr);
     }
-    header > .header-background-images > h1,
-    header > .header-background-images > p {
-      top: 50%;
-      margin: 10px 0;
+    .week-books-recomendatios{
+        
     }
-    header > .header-background-images > h1 {
-      font-size: 20px;
-      text-align: left;
-      padding-left: 0.5rem;
-    }
-    header > .header-background-images > p {
-      font-size: 15px;
-      text-align: left;
-      padding-left: 0.5rem;
-    }
-    .spans-container > span {
-      margin: 0.5rem;
-    }
-  }
-@media screen and (max-width: 760px) {
-    section.search-for-genres > div.genres-list {
-      grid-template-columns: repeat(2, 2fr);
-    }
-    .box-genre .genre-title {
-      text-align: center;
-      font-size: 4vw;
-      position: absolute;
-    }
-    section.search-for-genres > .subtitle {
-      display: block;
-      margin: 0 0;
-      width: 50%;
-      padding: 0 0;
-    }
-    .week-books-box > .title {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    .title h1 {
-      margin-bottom: 0.5rem;
-      font-size: 20px;
-    }
-    .title .show-more {
-      margin: 0;
-    }
-    .subtitle h1 {
-      width: 100%;
-      text-align: center;
-      font-size: 15px;
-      margin: 0.2rem;
-    }
-  }
-  @media screen and (max-width: 560px) {
-    section.search-for-genres > div.genres-list {
-      grid-template-columns: repeat(1, 1fr);
-    }
-    .title h1 {
-      text-align: left;
-      font-size: 15px;
-    }
-    .box-genre .genre-title {
-      text-align: center;
-      font-size: 6vw;
-    }
-  }
-  
+}

@@ -18,6 +18,9 @@
   --font-texto-paralaxe: "Sriracha", "cursive";
 }
 html, body{
+    height: 100%;
+}
+.banner{
     max-width: 1366px;
     width: 100%;
     height: 100%;
@@ -30,14 +33,12 @@ html, body{
 header {
     max-width: 1366px;
     width: 100%;
-    min-height: 500px;
-    height: 100%;
+    min-height: 600px;
 }
   header nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 1366px;
     width: 100%;
     height: 100px;
     background-image: linear-gradient(to bottom, #8010e8, #7d25cf, #bb4ee7);
@@ -568,7 +569,6 @@ header {
 /* Style para tag main que abrange todas sessões do site*/
 main {
   min-width: 1366px;
-  width: 100%;
 }
 main > section.featured-books {
   min-height: 500px;
@@ -655,7 +655,6 @@ main > section.featured-books > .week-books-box {
   color: #d9534f;
 }
 main > section.search-for-genres {
-  margin: 0 5rem 0 5rem;
   background-color: #fffacd;
 }
 section.search-for-genres > .subtitle {
