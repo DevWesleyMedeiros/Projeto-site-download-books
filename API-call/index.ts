@@ -17,7 +17,7 @@ class AllApiEndingPoints {
 
     private showInformation(): void {
         if (this.endingPoint) {
-            axios.get(this.endingPoint)
+             axios.get(this.endingPoint)
                 .then(response => {
                     console.log(response.data); 
                 })
@@ -25,7 +25,7 @@ class AllApiEndingPoints {
                     console.error(error);
                 });
         } else {
-            console.error("Ending point is not defined");
+            console.error("Ending point não esta definido!");
         }
     }
 
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (searchInput && buttonSearch) {
         buttonSearch.addEventListener("click", () => {
-            const inputSearchValue = searchInput.value.toUpperCase();
+            const inputSearchValue = searchInput.value.trim().toUpperCase();
             const api = new AllApiEndingPoints(inputSearchValue);
             api.fetchInformation();
         });
@@ -49,8 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-class ApiForAutors extends AllApiEndingPoints {}
-class ApiForBookTitle extends AllApiEndingPoints {}
+class ApiForAutors extends AllApiEndingPoints {};
+class ApiForBookTitle extends AllApiEndingPoints {};
 class ApiForBookCover extends AllApiEndingPoints {}
-class ApiForGeneralInformationAutor extends AllApiEndingPoints {}
+class ApiForGeneralInformationAutor extends AllApiEndingPoints {};
 
