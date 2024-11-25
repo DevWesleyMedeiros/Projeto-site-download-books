@@ -1,3 +1,7 @@
+import 'jquery';
+import './feedback-screen.js';
+import './login-screen.js';
+
 import { creatElementsHtml } from "./login-screen.js";
 import { displayFeedBackBox } from "./feedback-screen.js";
 

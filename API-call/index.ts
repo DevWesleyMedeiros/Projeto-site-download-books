@@ -1,5 +1,5 @@
 import axios from "axios";
-
+import 'jquery';
 class AllApiEndingPoints {
     private bookInformation: string;
     private endingPoint: string;

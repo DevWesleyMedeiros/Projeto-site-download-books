@@ -1,3 +1,7 @@
+import 'jquery';
+import './slidders';
+import './feedback-screen';
+
 function creatElementsHtml(){
 
     let divFatherContainer = document.createElement("div")
