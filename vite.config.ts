@@ -8,6 +8,9 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: 'index.html',
+        scripts: path.resolve(__dirname, 'assets-scripts/feedback-screen.js'),
+        login: path.resolve(__dirname, 'assets-scripts/login-screen.js'),
+        slider: path.resolve(__dirname, 'assets-scripts/slidder.js'),
       },
       output: {
         entryFileNames: 'index.js', 
@@ -33,10 +36,16 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@scripts': path.resolve(__dirname, 'assets-scripts', 'API-call'),
-      '@styles': path.resolve(__dirname, 'content-style'),
-      '@assets': path.resolve(__dirname, 'assets-images', 'assets-images-for-genres', 'favicon-image', 'imagens-aninhadas'),
-    },
+        '@scripts': path.resolve(__dirname, 'assets-scripts'),
+        '@scripts/login': path.resolve(__dirname, 'assets-scripts/login-screen'),
+        '@scripts/feedback': path.resolve(__dirname, 'assets-scripts/feedback-screen'),
+        '@scripts/api': path.resolve(__dirname, 'assets-scripts/API-call'),
+        
+        '@assets': path.resolve(__dirname, 'assets-images'),
+        '@assets/genres': path.resolve(__dirname, 'assets-images-for-genres'),
+        '@assets/favicon': path.resolve(__dirname, 'favicon-image'),
+        '@assets/nested': path.resolve(__dirname, 'imagens-aninhadas')
+      }
   },
   plugins: [],
 });

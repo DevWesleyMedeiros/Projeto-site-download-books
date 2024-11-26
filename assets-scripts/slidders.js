@@ -1,13 +1,19 @@
-import 'jquery';
-import './feedback-screen.js';
-import './login-screen.js';
+import { creatElementsHtml } from '@scripts/login/login-screen.js';
+import { displayFeedBackBox } from '@scripts/feedback/feedback-screen.js';
 
-import { creatElementsHtml } from "./login-screen.js";
-import { displayFeedBackBox } from "./feedback-screen.js";
+import '@assets/imagem1.jpg';
+import '@assets/imagem2.jpg';
+import '@assets/imagem3.jpg';
+import '@assets/genres/genre1.jpg';
+import '@assets/favicon/favicon.ico';
+import '@assets/nested/nested-image1.jpg';
+// import { creatElementsHtml } from "./login-screen.js";
+// import { displayFeedBackBox } from "./feedback-screen.js";
+
 
 // MENU DOWN CRIADO NO BARRA DE NAV
-$(document).ready(()=>{
-    $('#icon-down').click((evt)=>{
+$(function(){
+    $('#icon-down').on('click', (evt)=>{
         $('#icon-down').hide(10);
         $('.container-discover-genres').fadeIn(10, function(){
             $(this).css('display', 'grid');
@@ -15,14 +21,14 @@ $(document).ready(()=>{
         $('#icon-up').show(10);
     });
 
-    $('#icon-up').click((evt)=>{
+    $('#icon-up').on('click', (evt)=>{
         $('#icon-up').hide(10);
         $('.container-discover-genres').fadeOut(10, function(){
             $(this).css('display', 'none');
         })
         $('#icon-down').show(10);
     });
-    $('#button-register').click(function () {
+    $('#button-register').on('click', function () {
         $('.sign-in-button > button').css('display', 'none');
         $('.load').css('display', 'block');
         setTimeout(() => {
@@ -31,10 +37,10 @@ $(document).ready(()=>{
         }, 1500);
     })
 
-    $('.feedback-box').click(function () {
+    $('.feedback-box').on('click', function () {
         displayFeedBackBox();
     });
-    $('a[role=button]').click(function(e) {
+    $('a[role=button]').on('click',function(e) {
         e.preventDefault();
         $('.loader').css("visibility", "visible");
         setTimeout(()=>{
@@ -46,7 +52,7 @@ $(document).ready(()=>{
             $('.loader').css("visibility", "hidden");
         }, 5000)
     });
-    $('.scrollUp').click((e)=>{
+    $('.scrollUp').on('click',(e)=>{
         e.preventDefault();
         $('html, body').animate({scrollTop: 0}, 1000);
     })
@@ -72,10 +78,10 @@ $(document).ready(()=>{
             }, 5000);
         }
     }
-    $('.search-icon').click((e) => {
+    $('.search-icon').on('click', (e) => {
         handleAction(e);
     });
-    $('input[type=search]').keypress((e) => {
+    $('input[type=search]').on('keypress', (e) => {
         if (e.which === 13) { 
             handleAction(e);
         }
@@ -131,7 +137,7 @@ function creatElementsDiv() {
     return divBookSingle;
 }
 
-$(document).ready(function () {
+$(function () {
     let booksQuantity = 10
 
     let gridRepeat = `repeat(${booksQuantity}, 1fr)`
@@ -139,7 +145,7 @@ $(document).ready(function () {
     $('.books-box').css('grid-template-columns', gridRepeat)
 
     function showMore() {
-        $('#show-more-books').click(function (e) {
+        $('#show-more-books').on('click', function (e) {
             e.preventDefault();
             $(this).css('display', 'none');
             $('#show-less-books').css('display', 'block');
@@ -149,7 +155,7 @@ $(document).ready(function () {
     showMore();
 
     function showLess() {
-        $('#show-less-books').click(function (e) {
+        $('#show-less-books').on('click', function (e) {
             e.preventDefault();
             $(this).css('display', 'none');
             $('#show-more-books').css('display', 'block');
@@ -161,10 +167,10 @@ $(document).ready(function () {
 
     let isDrag = false;
     function StartMoveContainers() {
-        $('.container-book-single').mousedown(function () {
+        $('.container-book-single').on('mousedown', function () {
             isDrag = true;
         });
-        $(document).mousemove(function (event) {
+        $(document).on('mousemove', function (event) {
             if (isDrag) {
                 moveElements(event);
             }
@@ -173,7 +179,7 @@ $(document).ready(function () {
     StartMoveContainers();
 
     function stopMoveContainers() {
-        $(document).mouseup(function () {
+        $(document).on('mouseup', function () {
             isDrag = false;
         });
     }
@@ -254,7 +260,7 @@ $(function () {
         toggleText(currentIndex);
     }
     function clickSlider() {
-        $('.spans-container > span').click(function () {
+        $('.spans-container > span').on('click', function () {
             $('.header-background-images > img').eq(currentIndex).stop().fadeOut(1000);
             currentIndex = $(this).index();
             toggleText(currentIndex);

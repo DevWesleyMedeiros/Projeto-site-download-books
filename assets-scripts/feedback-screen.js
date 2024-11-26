@@ -1,7 +1,3 @@
-import 'jquery';
-import './login-screen';
-import './slidders';
-
 // CSS Manipula as container de feedback
 const stylesFeedbackScreen = {
     divContainerSendBox: `
