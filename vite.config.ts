@@ -1,31 +1,54 @@
 import { defineConfig } from 'vite';
-import path from 'path';
+import { resolve } from 'path';
+import eslintPlugin from 'vite-plugin-eslint';
+import { createHtmlPlugin } from 'vite-plugin-html'; 
 
 export default defineConfig({
+    plugins: [
+        eslintPlugin(), // Linter para manter o código limpo
+        createHtmlPlugin({
+          inject: {
+            data: {
+              title: 'Download de Livros' // Correção na estrutura
+            }
+          }
+        })
+      ],
   root: './',
   build: {
     outDir: 'dist',
     rollupOptions: {
       input: {
-        main: 'index.html',
-        scripts: path.resolve(__dirname, 'assets-scripts/feedback-screen.js'),
-        login: path.resolve(__dirname, 'assets-scripts/login-screen.js'),
-        slider: path.resolve(__dirname, 'assets-scripts/slidder.js'),
+        main: resolve(__dirname, './index.html'),
+        feedback: resolve(__dirname, 'assets-scripts/feedback-screen.js'),
+        login: resolve(__dirname, 'assets-scripts/login-screen.js'),
+        slidders: resolve(__dirname, 'assets-scripts/slidders.js'),
+        styles: resolve(__dirname, 'content-style/main.css'),
       },
       output: {
-        entryFileNames: 'index.js', 
-        chunkFileNames: 'assets/[name]-[hash].js',
         assetFileNames: ({ name }) => {
-          if (name && name.endsWith('.css')) {
-            return 'style.css';
+          if (/\.(gif|jpe?g|png|svg|ico|webp|avif)$/.test(name || '')) {
+            return 'assets/images/[name]-[hash][extname]';
           }
-          if (name && /\.(jpe?g|png|gif|svg|webp|ttf|woff|woff2)$/.test(name)) {
-            return 'assets/[name]-[hash][extname]';
+          if (/\.(css)$/.test(name || '')) {
+            return 'assets/styles/[name]-[hash][extname]';
+          }
+          if (/\.(ttf|otf|woff|woff2)$/.test(name || '')) {
+            return 'assets/fonts/[name]-[hash][extname]';
           }
           return 'assets/[name]-[hash][extname]';
-        }
-      }
-    }
+        },
+        chunkFileNames: 'chunks/[name]-[hash].js',
+        entryFileNames: 'scripts/[name]-[hash].js',
+      },
+    },
+  },
+  resolve: {
+    alias: {
+      '@assets': '/assets-images',
+      '@scripts': '/assets-scripts',
+      '@styles': '/content-style',
+    },
   },
   server: {
     open: true,
@@ -34,18 +57,4 @@ export default defineConfig({
   preview: {
     port: 4173,
   },
-  resolve: {
-    alias: {
-        '@scripts': path.resolve(__dirname, 'assets-scripts'),
-        '@scripts/login': path.resolve(__dirname, 'assets-scripts/login-screen'),
-        '@scripts/feedback': path.resolve(__dirname, 'assets-scripts/feedback-screen'),
-        '@scripts/api': path.resolve(__dirname, 'assets-scripts/API-call'),
-        
-        '@assets': path.resolve(__dirname, 'assets-images'),
-        '@assets/genres': path.resolve(__dirname, 'assets-images-for-genres'),
-        '@assets/favicon': path.resolve(__dirname, 'favicon-image'),
-        '@assets/nested': path.resolve(__dirname, 'imagens-aninhadas')
-      }
-  },
-  plugins: [],
 });

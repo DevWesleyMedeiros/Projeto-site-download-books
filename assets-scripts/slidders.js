@@ -1,14 +1,13 @@
-import { creatElementsHtml } from '@scripts/login/login-screen.js';
-import { displayFeedBackBox } from '@scripts/feedback/feedback-screen.js';
+import './content-style/main.css';
+import './content-style/form.css';
+import './content-style/main-responsive.css';
+import './assets-scripts/feedback-screen.js';
+import './assets-scripts/login-screen.js';
+import './assets-scripts/slidders.js';
 
-import '@assets/imagem1.jpg';
-import '@assets/imagem2.jpg';
-import '@assets/imagem3.jpg';
-import '@assets/genres/genre1.jpg';
-import '@assets/favicon/favicon.ico';
-import '@assets/nested/nested-image1.jpg';
-// import { creatElementsHtml } from "./login-screen.js";
-// import { displayFeedBackBox } from "./feedback-screen.js";
+import { creatElementsHtml } from '@scripts/login-screen.js'; 
+import { displayFeedBackBox } from '@scripts/feedback-screen.js';
+
 
 
 // MENU DOWN CRIADO NO BARRA DE NAV
