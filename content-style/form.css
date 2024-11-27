@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 .father-container{
     visibility: visible;
     width: 100vw;

@@ -1,15 +1,7 @@
-import './content-style/main.css';
-import './content-style/form.css';
-import './content-style/main-responsive.css';
-import './assets-scripts/feedback-screen.js';
-import './assets-scripts/login-screen.js';
-import './assets-scripts/slidders.js';
-
 import { creatElementsHtml } from '@scripts/login-screen.js'; 
 import { displayFeedBackBox } from '@scripts/feedback-screen.js';
 
-
-
+console.log("Javascritp carregado");
 // MENU DOWN CRIADO NO BARRA DE NAV
 $(function(){
     $('#icon-down').on('click', (evt)=>{

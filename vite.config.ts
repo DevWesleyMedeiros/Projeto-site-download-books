@@ -1,15 +1,16 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
-import eslintPlugin from 'vite-plugin-eslint';
+// import eslintPlugin from 'vite-plugin-eslint';
 import { createHtmlPlugin } from 'vite-plugin-html'; 
+import path from 'path';
 
 export default defineConfig({
     plugins: [
-        eslintPlugin(), // Linter para manter o código limpo
+        // eslintPlugin(),
         createHtmlPlugin({
           inject: {
             data: {
-              title: 'Download de Livros' // Correção na estrutura
+              title: 'Download de Livros'
             }
           }
         })
@@ -19,11 +20,7 @@ export default defineConfig({
     outDir: 'dist',
     rollupOptions: {
       input: {
-        main: resolve(__dirname, './index.html'),
-        feedback: resolve(__dirname, 'assets-scripts/feedback-screen.js'),
-        login: resolve(__dirname, 'assets-scripts/login-screen.js'),
-        slidders: resolve(__dirname, 'assets-scripts/slidders.js'),
-        styles: resolve(__dirname, 'content-style/main.css'),
+        main: resolve(__dirname, './index.html')
       },
       output: {
         assetFileNames: ({ name }) => {
@@ -45,9 +42,9 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@assets': '/assets-images',
-      '@scripts': '/assets-scripts',
-      '@styles': '/content-style',
+      '@assets': path.resolve('assets-images'),
+      '@scripts': path.resolve('assets-scripts'),
+      '@styles': path.resolve('content-style')
     },
   },
   server: {

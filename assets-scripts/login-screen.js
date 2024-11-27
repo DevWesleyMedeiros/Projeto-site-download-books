@@ -1,3 +1,9 @@
+import '@styles/main.css';
+import '@styles/form.css';
+import '@styles/main-responsive.css';
+import '@scripts/login-screen.js';
+import '@scripts/main.js';
+
 function creatElementsHtml(){
 
     let divFatherContainer = document.createElement("div")
