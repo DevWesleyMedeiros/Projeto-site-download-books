@@ -1,6 +1,5 @@
 import axios from "axios";
-import 'jquery';
-class AllApiEndingPoints {
+export class AllApiEndingPoints {
     private bookInformation: string;
     private endingPoint: string;
 
@@ -49,8 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-class ApiForAutors extends AllApiEndingPoints {};
-class ApiForBookTitle extends AllApiEndingPoints {};
-class ApiForBookCover extends AllApiEndingPoints {}
-class ApiForGeneralInformationAutor extends AllApiEndingPoints {};
+export class ApiForAutors extends AllApiEndingPoints {};
+export class ApiForBookTitle extends AllApiEndingPoints {};
+export class ApiForBookCover extends AllApiEndingPoints {}
+export class ApiForGeneralInformationAutor extends AllApiEndingPoints {};
 

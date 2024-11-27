@@ -24,6 +24,8 @@
 }
 html, body{
     height: 100%;
+    background-image: url("../assets-images/imagem-background-site.jpg");
+    background-attachment: fixed;
 }
 .banner{
     max-width: 1366px;
@@ -36,7 +38,6 @@ html, body{
     background-attachment: fixed;
 }
 header {
-    max-width: 1366px;
     width: 100%;
     min-height: 600px;
 }
@@ -573,7 +574,7 @@ header {
 
 /* Style para tag main que abrange todas sessões do site*/
 main {
-  min-width: 1366px;
+  width: 100%;
 }
 main > section.featured-books {
   min-height: 500px;

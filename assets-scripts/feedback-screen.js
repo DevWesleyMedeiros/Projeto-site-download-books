@@ -1,9 +1,3 @@
-import '@styles/main.css';
-import '@styles/form.css';
-import '@styles/main-responsive.css';
-import '@scripts/login-screen.js';
-import '@scripts/main.js';
-
 // CSS Manipula as container de feedback
 const stylesFeedbackScreen = {
     divContainerSendBox: `

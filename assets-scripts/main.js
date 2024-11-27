@@ -1,5 +1,11 @@
 import { creatElementsHtml } from '@scripts/login-screen.js'; 
 import { displayFeedBackBox } from '@scripts/feedback-screen.js';
+import { AllApiEndingPoints } from '@apiCall/index.ts';
+import { ApiForAutors } from '@apiCall/index.ts';
+import { ApiForBookTitle } from '@apiCall/index.ts';
+import { ApiForBookCover } from '@apiCall/index.ts';
+import { ApiForGeneralInformationAutor } from '@apiCall/index.ts';
+import $ from 'jquery';
 
 console.log("Javascritp carregado");
 // MENU DOWN CRIADO NO BARRA DE NAV

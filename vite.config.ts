@@ -44,6 +44,7 @@ export default defineConfig({
     alias: {
       '@assets': path.resolve('assets-images'),
       '@scripts': path.resolve('assets-scripts'),
+      '@apiCall': path.resolve('API-call'),
       '@styles': path.resolve('content-style')
     },
   },
