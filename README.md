@@ -1,6 +1,6 @@
 # Projeto de Download de Livros Grátis
 
-Este é um projeto de uma página web que permite o acesso ao download de livros gratuitos. O projeto é desenvolvido utilizando diversas tecnologias modernas como HTML5, CSS3, Javascript com TypeScript, Vite, TailwindCSS, FontAwesome, e Axios para consumir dados da API do Google Books. O objetivo é fornecer uma interface simples e intuitiva para que os usuários possam encontrar e baixar livros diretamente de um banco de dados noSQL (Firebase), com os arquivos armazenados no Google Drive.
+Este é um projeto de uma página web que permite o acesso ao download de livros gratuitos. O projeto é desenvolvido utilizando diversas tecnologias modernas como HTML5, CSS3, Javascript com TypeScript, Vite, TailwindCSS, FontAwesome, e Axios para consumir dados da API do Google Books. O objetivo é fornecer uma interface simples e intuitiva para que os usuários possam encontrar e baixar livros diretamente de um banco de dados noSQL (Firebase).
 
 ## Tecnologias Utilizadas
 
@@ -18,14 +18,14 @@ Este é um projeto de uma página web que permite o acesso ao download de livros
 
 - Exibição de uma lista de livros gratuitos usando dados recuperados da API do Google Books.
 - Exibição das informações dos livros como: título, autor, capa, descrição, etc.
-- Opção para os usuários realizarem o download dos livros, com os arquivos hospedados no Google Drive.
+- Integração com o Firebase para armazenar e recuperar os livros via API.
+- Opção para os usuários realizarem o download dos livros, com os arquivos hospedados nesse banco de dados.
 - Sistema de busca para facilitar a pesquisa dos livros desejados.
 - Design responsivo e moderno utilizando TailwindCSS.
-- Integração com o Firebase para armazenar e recuperar os livros via API.
 - Sistema de cadastros básico que permitirá o usuário ter acesso ao link de download dos livros criado com firebase auth.
 
 ## Estrutura do Projeto
-Na raiz "/" exite as pastas necessárias para que o projeto funcione # Imagens e outros arquivos estáticos (botões, cabeçalhos, etc) /API-call # chamada para API do google books /dist # arquivos do projeto em produção etc.
+Na raiz "/" exitem as pastas necessárias para que o projeto funcione /API-call # chamada para API do google books /dist # arquivos do projeto em produção etc.
 
 ## Como Rodar o Projeto
 
