@@ -1,18 +1,15 @@
 {
-    "compilerOptions": {
-      "target": "esnext",                         // Definir o padrão do JavaScript de saída
-      "module": "esnext",                         // Usar módulos ES
-      "moduleResolution": "node",                 // Resolução de módulos de acordo com o Node
-      "outDir": "./dist",                         // Diretório de saída para o código compilado
-      "rootDir": "./",                            // Definir a raiz do projeto (abrange ambos os diretórios)
-      "strict": true,                             // Ativar o modo estrito do TypeScript
-      "esModuleInterop": true,                    // Permitir a importação de módulos CommonJS
-      "skipLibCheck": true,                       // Ignorar verificação de tipos em arquivos de definição de bibliotecas
-      "forceConsistentCasingInFileNames": true    // Forçar consistência de maiúsculas/minúsculas nos nomes dos arquivos
-    },
-    "include": [
-      "assets-scripts/**/*.js",                   // Incluir arquivos JavaScript da pasta assets-scripts
-      "API-call/**/*.ts"                          // Incluir arquivos TypeScript da pasta API-call
-    ]
-  }
-  
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "rootDir": "./",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["assets-scripts/**/*.js", "API/**/*.ts"],
+  "exclude": ["dist", "node_modules"]
+}

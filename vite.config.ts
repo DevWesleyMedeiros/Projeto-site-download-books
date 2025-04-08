@@ -5,47 +5,47 @@ import { createHtmlPlugin } from 'vite-plugin-html';
 import path from 'path';
 
 export default defineConfig({
-    plugins: [
-        // eslintPlugin(),
-        createHtmlPlugin({
-          inject: {
-            data: {
-              title: 'Download de Livros'
-            }
-          }
-        })
-      ],
-  root: './',
+  plugins: [
+    // eslintPlugin(),
+    createHtmlPlugin({
+      inject: {
+        data: {
+          title: "Download de Livros",
+        },
+      },
+    }),
+  ],
+  root: "./",
   build: {
-    outDir: 'dist',
+    outDir: "dist",
     rollupOptions: {
       input: {
-        main: resolve(__dirname, './index.html')
+        main: resolve(__dirname, "./index.html"),
       },
       output: {
         assetFileNames: ({ name }) => {
-          if (/\.(gif|jpe?g|png|svg|ico|webp|avif)$/.test(name || '')) {
-            return 'assets/images/[name]-[hash][extname]';
+          if (/\.(gif|jpe?g|png|svg|ico|webp|avif)$/.test(name || "")) {
+            return "assets/images/[name]-[hash][extname]";
           }
-          if (/\.(css)$/.test(name || '')) {
-            return 'assets/styles/[name]-[hash][extname]';
+          if (/\.(css)$/.test(name || "")) {
+            return "assets/styles/[name]-[hash][extname]";
           }
-          if (/\.(ttf|otf|woff|woff2)$/.test(name || '')) {
-            return 'assets/fonts/[name]-[hash][extname]';
+          if (/\.(ttf|otf|woff|woff2)$/.test(name || "")) {
+            return "assets/fonts/[name]-[hash][extname]";
           }
-          return 'assets/[name]-[hash][extname]';
+          return "assets/[name]-[hash][extname]";
         },
-        chunkFileNames: 'chunks/[name]-[hash].js',
-        entryFileNames: 'scripts/[name]-[hash].js',
+        chunkFileNames: "chunks/[name]-[hash].js",
+        entryFileNames: "scripts/[name]-[hash].js",
       },
     },
   },
   resolve: {
     alias: {
-      '@assets': path.resolve('assets-images'),
-      '@scripts': path.resolve('assets-scripts'),
-      '@apiCall': path.resolve('API-call'),
-      '@styles': path.resolve('content-style')
+      "@assets": path.resolve("images"),
+      "@scripts": path.resolve("scripts"),
+      "@apiCall": path.resolve("API"),
+      "@styles": path.resolve("styles"),
     },
   },
   server: {

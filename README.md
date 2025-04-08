@@ -8,7 +8,7 @@ Este é um projeto de uma página web que permite o acesso ao download de livros
 - **CSS3**: Estilização da página.
 - **JavaScript com TypeScript**: Lógica do front-end.
 - **Vite**: Ferramenta de build rápida para o desenvolvimento com suporte a hot reload.
-- **TailwindCSS**: Framework para estilização rápida e responsiva.
+- **Bootstrap**: Framework para estilização rápida e responsiva.
 - **FontAwesome**: Ícones para uma interface mais interativa.
 - **Axios**: Para realizar requisições HTTP à API do Google Books.
 - **Firebase (NoSQL)**: Banco de dados para armazenar informações sobre os livros.
