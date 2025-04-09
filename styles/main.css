@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import url("https://fonts.googleapis.com/css2?family=Rubik+Burned&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700&display=swap");
@@ -5,9 +9,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Passion+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Sriracha&display=swap");
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 * {
   margin: 0;
@@ -21,17 +22,17 @@
   --border: 2px solid #000;
   --font-paralaxe: "Passion One", "cursive";
   --font-texto-paralaxe: "Sriracha", "cursive";
+  --section-background: #fffacd
 }
 html,
 body {
   height: 100%;
-  background-image: url("../assets-images/imagem-background-site.jpg");
+  background-image: url("../images/imagem-background-site.jpg");
   background-attachment: fixed;
 }
 .banner {
   width: 100%;
   height: 100%;
-  background-image: url("../assets-images/imagem-background-site.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -41,40 +42,38 @@ body {
 /* Header e nav */
 header {
   width: 100%;
-  height: 600px;
+  height: 580px;
 }
 header nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
+  display: flex;
+  justify-content: space;
+  align-items: center;
   padding: 0.5rem;
   background-image: linear-gradient(to bottom, #8010e8, #7d25cf, #bb4ee7);
   position: absolute;
   z-index: 2;
+  
 }
-nav > .external-books-sites-container {
+nav .external-books-sites-container {
+  width: 20%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   order: 1;
   padding-bottom: 0.7rem;
 }
-nav > .external-books-sites-container > .sign-in-button {
-  height: 50px;
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 3rem;
+nav .external-books-sites-container .sign-in-button {
+  width: 100%;
 }
-.sign-in-button > button {
+.sign-in-button button {
   padding: 0.5rem;
-  text-align: center;
   background-color: #563993;
   color: #ffffff;
   border-radius: 10px;
   cursor: pointer;
 }
-.sign-in-button > .load {
+.sign-in-button .load {
   display: none;
   width: 25px;
   height: 25px;
@@ -89,41 +88,34 @@ nav > .external-books-sites-container > .sign-in-button {
     transform: rotate(1turn);
   }
 }
-nav > .search-bar {
+nav .search-bar {
   width: 100%;
   display: flex;
   align-items: center;
-  order: 0;
-}
-@media (max-width: 913px) {
-  .search-bar {
-    display: block
-  }
 }
 
 .search-bar > .container-search-bar {
-  max-width: 500px;
   width: 100%;
   height: 45px;
   display: flex;
   justify-content: center;
-  border-radius: 5px;
+  border-radius: 10px;
   margin-right: 2rem;
   -webkit-box-shadow: 3px 3px 15px 0px rgba(87, 25, 87, 1);
   -moz-box-shadow: 3px 3px 15px 0px rgba(87, 25, 87, 1);
   box-shadow: 3px 3px 15px 0px rgba(87, 25, 87, 1);
 }
-.container-search-bar > input {
+.container-search-bar input[type="search"] {
   width: 100%;
   outline: none;
-  padding-left: 0.5rem;
+  padding: 0.5rem;
 }
-.container-search-bar > .search-icon {
+.container-search-bar .search-icon {
   width: 15%;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
-.container-search-bar > .search-icon > i {
+.container-search-bar .search-icon > i {
   width: 100%;
   text-align: center;
   padding: 0.8rem 0;
@@ -137,7 +129,7 @@ nav > .search-bar {
   height: 100vh;
   position: fixed;
   z-index: 7;
-  opacity: 0.9;
+  opacity: 0.8;
 }
 .background-modal-msg {
   width: 100%;
@@ -417,14 +409,14 @@ nav > .search-bar {
   height: 100px;
   padding: 1rem 0 1rem 5rem;
 }
-.search-bar > .animation > .img-animation {
+.search-bar .animation .img-animation {
   width: 100px;
   background-image: url("../imagens-animadas/learning-animate.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
 }
-.search-bar > .animation > .discover-genres {
+.search-bar .animation .discover-genres {
   display: flex;
   align-items: center;
 }
@@ -434,13 +426,13 @@ nav > .search-bar {
   width: 800px;
   height: 336px;
   display: none;
+  background-color: #fff;
   grid-template-columns: repeat(3, 1fr);
   -webkit-box-shadow: 2px 4px 15px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 2px 4px 15px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 2px 4px 15px 0px rgba(0, 0, 0, 0.75);
-  background-color: #f5f5f5;
   position: absolute;
-  top: 40%;
+  top: 42%;
   left: 46%;
   transform: translate(-55%, -50%);
   z-index: 5;
@@ -487,10 +479,9 @@ nav > .search-bar {
 .genres-books > ul > li > a:hover {
   text-decoration: underline;
 }
-header > .header-background-images {
+header .header-background-images {
   width: 100%;
-  height: 100%;
-  max-height: 700px;
+  min-height: 700px;
 }
 .header-background-images > h1 {
   text-align: center;
@@ -586,11 +577,13 @@ header > .header-background-images {
 main {
   width: 100%;
 }
-main > section.featured-books {
-  min-height: 500px;
-  background-color: #fffacd;
+main .featured-books {
+  height: 500px;
+  margin: 0 2%;
+  padding: 0 .5rem;
+  background-color: var(--section-background);
 }
-main > section.featured-books > .week-books-box {
+main .featured-books .week-books-box {
   display: flex;
   flex-direction: column;
 }
@@ -606,6 +599,7 @@ main > section.featured-books > .week-books-box {
   font-size: 2em;
   font-weight: bold;
   color: #000;
+  padding: 1rem 0;
 }
 .title .show-more {
   background-color: #000;
@@ -670,13 +664,15 @@ main > section.featured-books > .week-books-box {
 .book-information > p.bookCategory {
   color: #d9534f;
 }
-main > section.search-for-genres {
-  background-color: #fffacd;
+main > .search-for-genres {
+  background-color: var(--section-background);
+
 }
-section.search-for-genres > .subtitle {
+section.search-for-genres .subtitle {
   display: flex;
   align-items: flex-start;
   margin-left: 1.5rem;
+  padding-top: 2rem;
 }
 .subtitle h1 {
   font-family: Arial, Helvetica, sans-serif;
@@ -747,12 +743,13 @@ section.search-for-genres > div.genres-list {
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
 }
-main > section.recomendations {
-  margin: 0 5rem;
+main .recomendations {
   min-height: 400px;
-  background-color: #fffacd;
+  background-color: var(--section-background);
+  padding: 0 2rem;
+  margin: 0 2%;
 }
-section.recomendations > .week-books-recomendations {
+.recomendations .week-books-recomendations {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -767,9 +764,7 @@ section.recomendations > .week-books-recomendations {
 .week-books-recomendations .recomendation-books-title {
   width: 50%;
   display: flex;
-  align-items: center;
   padding: 1rem 0;
-  margin-left: 3.9rem;
 }
 .scrollUp {
   display: flex;
@@ -817,7 +812,7 @@ section.recomendations > .week-books-recomendations {
 #right {
   margin-right: 0.5rem;
 }
-section.recomendations
+.recomendations
   .week-books-recomendations
   .container-recomendations
   .container-recomendation-books {
@@ -849,7 +844,7 @@ main > section.my-recomendation {
   max-width: 1366px;
   display: flex;
   flex-direction: column;
-  background-color: #fffacd;
+  background-color: var(--section-background);
   opacity: 0.8;
 }
 section.my-recomendation > .myPreference-title {
@@ -921,7 +916,7 @@ main > section.most-read {
   max-width: 1366px;
   display: flex;
   flex-direction: column;
-  background-color: #fffacd;
+  background-color: var(--section-background);
   opacity: 0.8;
 }
 section.most-read > .most-read-title {
@@ -991,7 +986,7 @@ main > section.author-information {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  background-color: #fffacd;
+  background-color: var(--section-background);
 }
 section.author-information > .about-author {
   display: flex;
@@ -1151,4 +1146,213 @@ section.author-information > .about-author {
 }
 .private-terms a:hover::before {
   width: 100%;
+}
+/* Formulário de cadastro */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.father-container{
+    visibility: visible;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 6;
+    position: fixed;
+}
+.father-container > .container-form {
+    display: flex;
+    flex-direction: column;
+    min-height: 580px;
+    max-width: 550px;
+    border: 1px solid #000;
+    box-shadow: 0 0 0 8px rgba(64, 61, 61, .3);
+    background-color: #F1f1ea;
+    overflow-y: auto;
+}
+.container-form > .book-icon{
+    display: block;
+    margin: 0.5rem auto 0 auto;
+    width: 70px;
+    height: 70px;
+    border-radius: 40%;
+    text-align: center;
+    background-image: url("../images/pilha-de-tres-livros.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.container-form > .title{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.title > p, h1{
+    font-family: Arial,sans-serif;
+    text-align: center;
+    color: #555;
+}
+.title > #form-title{
+    font-size: 1.5em;
+}
+.container-form > .form{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form > form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+form > input[type=email], input[type=password]{
+    width: 70%;
+    height: 40px;
+    margin-top: 0.5rem;
+    padding-left: 0.5rem;
+    border: 1px solid #000;
+    border-radius: 5px;
+    outline: none;
+}
+form button{
+    background-color: #50a994;
+    color: #fff;
+    width: 70%;
+    height: 40px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+    font-family: Arial,sans-serif;
+}
+form .container-or{
+    display: block;
+    background-color: transparent;
+    color: #000;
+    width: 70%;
+    height: 20px;
+    font-size: 1.2em;
+    margin: 1rem auto 1rem auto;
+    text-align: center;
+    font-family: Arial,sans-serif;
+}
+.form > .conteiner-sign-options{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.conteiner-sign-options > div.button-email{
+    display: flex;
+    width: 70%;
+    height: 40px;
+    padding: 0 0.5rem;
+    border-radius: 5px;
+    margin: 0 0 0.5rem 0;
+    border: 1px solid #000;
+    background-image: linear-gradient(to right,#FF7854 0%,#FF5079 100%);
+    background-repeat: repeat-x;
+}
+div.button-email > button.signup-email{
+    color: #fff;
+    width: 100%;
+    height: 40px;
+    font-size: 1.2em;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-family: Arial,sans-serif;
+    background-color: transparent;
+}
+.conteiner-sign-options > div.button-google{
+    display: flex;
+    width: 70%;
+    height: 40px;
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+    margin: 0 0 0.5rem 0;
+    border: 1px solid #000;
+    background-image: linear-gradient(to right, #337ab7 0%, #0d7fe2 100%);
+    background-repeat: repeat-x;
+}
+div.button-google > button.signup-google{
+    color: #fff;
+    width: 100%;
+    height: 40px;
+    font-size: 1.2em;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-family: Arial,sans-serif;
+    background-color: transparent;
+}
+.form > .terms{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 0.8rem;
+    text-align: center;
+}
+.terms > a{
+    text-decoration: none;
+    color: #333;
+    font-weight: 100;
+    padding-top: 0.2rem;
+    margin-top: 1rem;
+}
+.terms > a#forgot-password{
+    color: #0d7fe2;
+}
+.terms > a:hover{
+    text-decoration: underline;
+}
+/* Serão insiridas via js com as expressões regulares*/
+div.container-error-message{
+    display: none;
+    text-align: left;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.5rem 0 0.5rem 0.5rem;
+    background-color: #ebccd1;
+    border-radius: 5px;
+}
+div.container-error-message > p#email, p#password{
+    color: #a94442;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    margin: 0.5rem 0;
+}
+p#email::before, p#password::before{
+    content: '\2022';
+    color: #a94442;
+    margin-right: 0.5rem;
+}
+
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  nav{
+    flex-direction: column;
+    justify-content: center;
+  }
+  nav .external-books-sites-container{
+    text-align: center;
+  }
+  ..header-background-images > p#text{
+    border: 5px solid green;
+    font-size: 20px;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    top: 50%;
+  }
 }

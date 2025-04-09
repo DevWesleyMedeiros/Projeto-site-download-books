@@ -105,7 +105,7 @@ class LoginScreen {
     // Botão de e-mail
     this.elements.buttonEmailContainer.classList.add('button-email');
     this.elements.emailIcon.classList.add('email');
-    this.elements.emailIcon.setAttribute('src', '../assets-images/mensagem.png');
+    this.elements.emailIcon.setAttribute('src', '../images/mensagem.png');
     this.elements.emailIcon.setAttribute('alt', 'Ícone mensagem');
     this.elements.emailLoginButton.classList.add('signup-email');
     this.elements.emailLoginButton.id = 'button-email';
@@ -114,7 +114,7 @@ class LoginScreen {
     // Botão do Google
     this.elements.buttonGoogleContainer.classList.add('button-google');
     this.elements.googleIcon.classList.add('google');
-    this.elements.googleIcon.setAttribute('src', '../assets-images/google.png');
+    this.elements.googleIcon.setAttribute('src', '../images/google.png');
     this.elements.googleIcon.setAttribute('alt', 'Ícone Google');
     this.elements.googleLoginButton.classList.add('signup-google');
     this.elements.googleLoginButton.id = 'button-google';
