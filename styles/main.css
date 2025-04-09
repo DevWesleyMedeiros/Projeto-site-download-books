@@ -552,10 +552,11 @@ header .header-background-images {
 }
 /* Caixa lateral de FeedBack */
 .feedback-box {
-  width: 2.2rem;
-  height: 8rem;
+  width: 2.5rem;
+  height: 10rem;
   border-radius: 0.5rem;
   background-color: #070808;
+  padding-top: 2rem;
   position: fixed;
   cursor: pointer;
   top: 50%;
@@ -692,7 +693,7 @@ section.search-for-genres .subtitle {
 .subtitle a:hover {
   text-decoration: underline;
 }
-section.search-for-genres > div.genres-list {
+.search-for-genres .genres-list {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 4fr);
@@ -1147,12 +1148,8 @@ section.author-information > .about-author {
 .private-terms a:hover::before {
   width: 100%;
 }
+
 /* Formulário de cadastro */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
 .father-container{
     visibility: visible;
     width: 100vw;
@@ -1160,16 +1157,16 @@ section.author-information > .about-author {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.8);
     z-index: 6;
     position: fixed;
 }
 .father-container > .container-form {
-    display: flex;
-    flex-direction: column;
     min-height: 580px;
     max-width: 550px;
-    border: 1px solid #000;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     box-shadow: 0 0 0 8px rgba(64, 61, 61, .3);
     background-color: #F1f1ea;
     overflow-y: auto;
@@ -1193,7 +1190,7 @@ section.author-information > .about-author {
     align-items: center;
     flex-direction: column;
 }
-.title > p, h1{
+.title > h1, p{
     font-family: Arial,sans-serif;
     text-align: center;
     color: #555;
@@ -1213,6 +1210,7 @@ section.author-information > .about-author {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 2rem;
     width: 100%;
 }
 form > input[type=email], input[type=password]{
@@ -1341,6 +1339,14 @@ p#email::before, p#password::before{
 
 /* Media Queries */
 @media (max-width: 1024px) {
+  .container-discover-genres{
+    max-width: 750px;
+    width: 100%;
+    height: 320px;
+    top: 47.5%;
+    left: 60.5%;
+  }
+
   nav{
     flex-direction: column;
     justify-content: center;
@@ -1348,11 +1354,41 @@ p#email::before, p#password::before{
   nav .external-books-sites-container{
     text-align: center;
   }
-  ..header-background-images > p#text{
-    border: 5px solid green;
-    font-size: 20px;
+  .header-background-images > p{
+    top: 75%;
+  }
+  .header-background-images > h1{
     margin-top: 1.5rem;
-    padding: 1rem;
     top: 50%;
   }
+  .featured-books{
+    display: flex;
+    flex-direction: column;
+  }
+  .search-for-genres{
+    display: flex;
+    flex-direction: column;
+  }
+  .search-for-genres > .subtitle{
+    display: flex;
+    justify-content: center;
+  }
+  .search-for-genres > .genres-list{
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 16px;
+  }
+  .recomendations > .week-books-recomendations .recomendation-books-title{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .father-container > .container-form {
+    max-width: 450px;
+    width: 100%;
+    margin: 1.5rem auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 }
