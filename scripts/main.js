@@ -1,3 +1,5 @@
+"strict mode";
+
 import { creatElementsHtml } from '@scripts/login-screen.js'; 
 import { displayFeedBackBox } from '@scripts/feedback-screen.js';
 import { 

@@ -1,6 +1,0 @@
-Problemas no meu código
-
-- Responsividade no container genres
-- Problema na regex
-- Reformular código da tela de login
-- Arrumar lógica do botão mostrar mais

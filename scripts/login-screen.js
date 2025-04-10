@@ -1,3 +1,5 @@
+"strict mode";
+
 // LoginScreen.js
 class LoginScreen {
   constructor() {
