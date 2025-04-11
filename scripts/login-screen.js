@@ -1,4 +1,4 @@
-"strict mode";
+"use strict";
 
 // LoginScreen.js
 class LoginScreen {
@@ -8,9 +8,7 @@ class LoginScreen {
     this.eventHandlers = new EventHandlers(this);
   }
 
-  /**
-   * Cria e renderiza o formulário de login
-   */
+  //Cria e renderiza o formulário de login
   render() {
     this.createElements();
     this.setupAttributes();
@@ -20,9 +18,7 @@ class LoginScreen {
     return this;
   }
 
-  /**
-   * Cria todos os elementos DOM necessários
-   */
+  //Cria todos os elementos DOM necessários
   createElements() {
     const elements = [
       'fatherContainer', 'containerForm', 'bookIcon', 'titleContainer', 'title', 
@@ -54,9 +50,7 @@ class LoginScreen {
     this.elements.dividerText = document.createElement('span');
   }
 
-  /**
-   * Configura atributos e conteúdo dos elementos
-   */
+  // Configura atributos e conteúdo dos elementos
   setupAttributes() {
     // Container principal
     this.elements.fatherContainer.id = 'background';
@@ -139,9 +133,7 @@ class LoginScreen {
     this.elements.passwordErrorMessage.textContent = 'Senha é requerida (mínimo 6 caracteres sem espaços)';
   }
 
-  /**
-   * Helper para configurar um elemento input
-   */
+  //Helper para configurar um elemento input
   setupInput(inputElement, options) {
     for (const [key, value] of Object.entries(options)) {
       if (value === true) {
@@ -152,9 +144,7 @@ class LoginScreen {
     }
   }
 
-  /**
-   * Monta a estrutura de elementos DOM
-   */
+  //Monta a estrutura de elementos DOM
   appendElements() {
     // Montar title container
     this.elements.titleContainer.append(this.elements.title, this.elements.subtitle);
@@ -200,9 +190,8 @@ class LoginScreen {
     this.elements.fatherContainer.appendChild(this.elements.containerForm);
   }
 
-  /**
-   * Configura todos os event listeners
-   */
+  //Configura todos os event listeners
+
   setupEventListeners() {
     // Evento de clique fora do formulário para fechar
     this.elements.fatherContainer.addEventListener('click', this.eventHandlers.handleOutsideClick);
@@ -224,9 +213,7 @@ class LoginScreen {
     });
   }
 
-  /**
-   * Validação de email
-   */
+  // Validação de email
   validateEmail(email) {
     if (!this.validators.isValidEmail(email)) {
       this.showError('email');
@@ -236,9 +223,7 @@ class LoginScreen {
     return true;
   }
 
-  /**
-   * Validação de senha
-   */
+  // Validação de senha
   validatePassword(password) {
     if (!this.validators.isValidPassword(password)) {
       this.showError('password');
@@ -248,9 +233,7 @@ class LoginScreen {
     return true;
   }
 
-  /**
-   * Mostra mensagem de erro específica
-   */
+  //Mostra mensagem de erro específica
   showError(type) {
     this.elements.errorContainer.style.display = 'block';
     if (type === 'email') {
@@ -260,9 +243,7 @@ class LoginScreen {
     }
   }
 
-  /**
-   * Esconde mensagem de erro específica
-   */
+  //Esconde mensagem de erro esp/
   hideError(type) {
     if (type === 'email') {
       this.elements.emailErrorMessage.style.display = 'none';
@@ -279,9 +260,7 @@ class LoginScreen {
     }
   }
 
-  /**
-   * Fecha o modal de login
-   */
+  //Fecha o modal de login
   close() {
     this.elements.fatherContainer.style.visibility = 'hidden';
     const buttonLogin = document.querySelector('.sign-in-button > button');
@@ -291,32 +270,12 @@ class LoginScreen {
   }
 }
 
-/**
- * Classe para validação de formulários
- */
+//Classe para validação de formulários
 class FormValidators {
-  /**
-   * Valida o formato de email
-   * Regras:
-   * - Sem espaços em branco
-   * - Deve conter um @ seguido por um domínio
-   * - Deve ter pelo menos um ponto após o domínio
-   * - Não deve conter caracteres especiais além de @ e . em posições válidas
-   */
   isValidEmail(email) {
-    // Regex melhorada para email
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return !(/\s/.test(email)) && emailRegex.test(email);
   }
-
-  /**
-   * Valida o formato de senha
-   * Regras:
-   * - Sem espaços em branco
-   * - Mínimo de 6 caracteres
-   * - Deve conter pelo menos um número
-   * - Deve conter pelo menos uma letra maiúscula
-   */
   isValidPassword(password) {
     // Verifica se não tem espaços
     if (/\s/.test(password)) {
@@ -327,20 +286,11 @@ class FormValidators {
     if (password.length < 6) {
       return false;
     }
-    
-    // Verifica se tem pelo menos um número e uma letra maiúscula
-    // Esta validação é opcional, pode ser ativada conforme necessidade
-    // const hasNumber = /\d/.test(password);
-    // const hasUpperCase = /[A-Z]/.test(password);
-    // return hasNumber && hasUpperCase;
-    
     return true;
   }
 }
 
-/**
- * Classe para gerenciar eventos
- */
+//Classe para gerenciar eventos
 class EventHandlers {
   constructor(loginScreen) {
     this.loginScreen = loginScreen;
@@ -350,18 +300,15 @@ class EventHandlers {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  /**
-   * Manipula clique fora do formulário
-   */
+  //Manipula clique fora do formulário
+
   handleOutsideClick(event) {
     if (!event.target.closest('.container-form')) {
       this.loginScreen.close();
     }
   }
 
-  /**
-   * Manipula envio do formulário
-   */
+  // Manipula envio do formulário
   handleSubmit(event) {
     event.preventDefault();
     
@@ -395,12 +342,24 @@ class EventHandlers {
   }
 }
 
-/**
- * Função de exportação para compatibilidade com o código existente
- */
+//Função de exportação para compatibilidade com o código existente
+// Cria os elementos HTML e retorna o elemento pai
 function creatElementsHtml() {
   return new LoginScreen().render();
 }
 
-// Exportações
-export { creatElementsHtml, LoginScreen, FormValidators, EventHandlers };
+/*
+Exportando as classes e funções para serem usadas em outros módulos
+-> createElementsHtml é a função que cria os elementos HTML
+-> LoginScreen é a classe que gerencia o login
+-> FormValidators é a classe que valida os campos do formulário
+-> EventHandlers é a classe que gerencia os eventos do formulário
+*/
+
+export {
+  creatElementsHtml,
+  LoginScreen,
+  FormValidators,
+  EventHandlers
+};
+// login-screen.js vai renderizar primeiro na minha página

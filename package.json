@@ -1,59 +1,61 @@
 {
-    "name": "download_books",
-    "version": "1.0.0",
-    "description": "Site para baixar livros gratuitos usando JavaScript, TypeScript e Vite",
-    "private": true,
-    "main": "index.js",
-    "scripts": {
-        "watch:ts": "tsc --watch",
-        "dev": "vite",
-        "build": "vite build",
-        "preview": "vite preview",
-        "test": "vitest"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/DevWesleyMedeiros/Projeto-site-download-books"
-    },
-    "keywords": [
-        "Livros",
-        "Download",
-        "Livros gratuitos",
-        "free books",
-        "JavaScript",
-        "typescript",
-        "jquery",
-        "tailwindcss",
-        "fontawesome",
-        "frontend",
-        "html5",
-        "css3"
-    ],
-    "dependencies": {
-        "@fortawesome/fontawesome-free": "^6.6.0",
-        "axios": "^1.7.7",
-        "bootstrap": "^5.3.3",
-        "jquery": "^3.7.1"
-    },
-    "author": "Wesley Medeiros da Rosa",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/DevWesleyMedeiros/Projeto-site-download-books"
-    },
-    "homepage": "https://github.com/DevWesleyMedeiros/Projeto-site-download-books#readme",
-    "devDependencies": {
-        "@types/axios": "^0.9.36",
-        "@vitejs/plugin-vue": "^5.2.1",
-        "sass": "^1.78.0",
-        "tailwindcss": "^3.4.15",
-        "typescript": "^5.6.2",
-        "vite": "^5.4.11",
-        "vite-plugin-eslint": "^1.8.1",
-        "vite-plugin-html": "^3.2.2",
-        "vitest": "^2.1.5"
-    },
-    "engines": {
-        "node": ">=16.0.0",
-        "npm": ">=8.0.0"
-    }
+  "name": "download_books",
+  "version": "1.0.0",
+  "description": "Site para baixar livros gratuitos usando JavaScript, TypeScript e Vite",
+  "private": true,
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "watch:ts": "tsc --watch",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DevWesleyMedeiros/Projeto-site-download-books"
+  },
+  "keywords": [
+    "Livros",
+    "Download",
+    "Livros gratuitos",
+    "free books",
+    "JavaScript",
+    "typescript",
+    "jquery",
+    "tailwindcss",
+    "fontawesome",
+    "frontend",
+    "html5",
+    "css3"
+  ],
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.6.0",
+    "axios": "^1.7.7",
+    "bootstrap": "^5.3.3",
+    "firebase": "^11.6.0",
+    "jquery": "^3.7.1"
+  },
+  "author": "Wesley Medeiros da Rosa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DevWesleyMedeiros/Projeto-site-download-books"
+  },
+  "homepage": "https://github.com/DevWesleyMedeiros/Projeto-site-download-books#readme",
+  "devDependencies": {
+    "@types/axios": "^0.9.36",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "sass": "^1.78.0",
+    "tailwindcss": "^3.4.15",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.11",
+    "vite-plugin-eslint": "^1.8.1",
+    "vite-plugin-html": "^3.2.2",
+    "vitest": "^2.1.5"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  }
 }

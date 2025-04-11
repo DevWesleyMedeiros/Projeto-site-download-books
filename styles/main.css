@@ -1215,6 +1215,7 @@ main .author-information {
     flex-direction: column;
     box-shadow: 0 0 0 8px rgba(64, 61, 61, .3);
     background-color: #F1f1ea;
+    z-index: 999;
     overflow-y: auto;
 }
 .container-form > .book-icon{
@@ -1382,8 +1383,6 @@ p#email::before, p#password::before{
     margin-right: 0.5rem;
 }
 /* STYLE PARA MODAL DE FEEDBACK */
-/* background da modal sendBox */
-/* Estilos para a modal de feedback */
 .feedback-container {
   display: flex;
   justify-content: center;
@@ -1392,7 +1391,7 @@ p#email::before, p#password::before{
   height: 100%;
   visibility: visible;
   position: fixed;
-  z-index: 9999;
+  z-index: 9;
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.75);
@@ -1400,24 +1399,22 @@ p#email::before, p#password::before{
   transition: all 0.3s ease;
 }
 
-.feedback-box {
-  width: 350px;
-  height: auto;
+.feedback-box > .feedback-form {
+  width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1.5rem 1rem;
+  padding: 1rem;
   border-radius: 10px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.85);
   background-color: #fff;
-  box-sizing: border-box;
+  top: 50%;
+  right: 100%;
+  position: absolute;
+  border: var(--border);
+  z-index: 999;
+  transform: translate(-100%, -50%);
   animation: fade-in 0.3s ease;
-}
-
-.feedback-form {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
 }
 
 .feedback-header {
@@ -1443,13 +1440,14 @@ p#email::before, p#password::before{
   font-size: 1.8rem;
   cursor: pointer;
   padding: 0;
+  text-align: end;
   line-height: 1;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease-in;
 }
 
 .feedback-close-btn:hover {
   color: #000;
-  transform: scale(1.1);
+  transform: scaleY(1.2);
 }
 
 .feedback-textarea-container {

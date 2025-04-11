@@ -1,4 +1,4 @@
-"strict mode";
+"use strict";
 
 function displayFeedBackBox() {
     const divContainerSendBox = document.createElement("div");
