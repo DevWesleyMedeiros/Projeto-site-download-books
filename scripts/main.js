@@ -213,6 +213,7 @@ function initializeBooksFeature() {
 
 // SLIDDERS AUTOMÁTICOS
 function initializeAutoSliders() {
+// mover slider para a esquerda
   function moveSlidderLeft() {
     const $slidderContainer = $(".recomendation-of-books");
     const $sliders = $(".myPreference");
@@ -223,7 +224,7 @@ function initializeAutoSliders() {
     
     setInterval(() => {
       currentIndex = (currentIndex + 1) % totalSliders;
-      $slidderContainer.css('transform', `translateX(-${currentIndex * 20}%)`);
+      $slidderContainer.css('transform', `translateX(-${currentIndex * -20}%)`);
     }, 10000);
   }
   
