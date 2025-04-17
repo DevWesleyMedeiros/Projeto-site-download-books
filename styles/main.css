@@ -466,7 +466,7 @@ nav .search-bar {
 .genres-books > ul > li > a {
   font-size: 20px;
   padding: 5px 0;
-  color: #9b9b9b;
+  color: #3f3e3e;
   font-weight: 400;
   font-family: "Roboto Slab", serif;
   text-decoration: none;
@@ -566,7 +566,7 @@ header .header-background-images {
 }
 .feedback-box h3 {
   color: #fff;
-  font-size: 1.7em;
+  font-size: 2.5em;
   font-family: "Caveat", cursive;
   position: relative;
   top: 50%;
@@ -626,7 +626,9 @@ main .featured-books .week-books-box {
   transition: width 1.5s ease;
 }
 .books-box > .container-book-single {
-  height: 400px;
+  width: 200px;
+  height: 350px;
+  padding: .5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -747,7 +749,6 @@ main .recomendations {
   background-color: var(--section-background);
   padding: 0 2rem;
   margin: 0 2%;
-  border: var(--border)
 }
 .recomendations .week-books-recomendations {
   width: 100%;
@@ -780,13 +781,6 @@ main .recomendations {
 }
 .scrollUp:hover {
   background-color: #bfb9b9;
-}
-.week-books-recomendations .view-all a {
-  text-decoration: none;
-  font-weight: 500;
-  text-transform: uppercase;
-  margin-left: 0.5rem;
-  color: #000;
 }
 .week-books-recomendations .view-all a:hover {
   text-decoration: underline;
@@ -827,8 +821,8 @@ main .recomendations {
   .container-recomendations
   .container-recomendation-books
   .book-single {
-  width: 226px;
-  height: 300px;
+  width: 200px;
+  height: 350px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -874,7 +868,9 @@ section.my-recomendation > .myPreference-title {
   animation: right-slide-animation 15s ease-in-out infinite;
 }
 .recomendation-of-books > .myPreference {
+  max-width: 300px;
   width: 100%;
+  height: 350px;
   flex-shrink: 0;
   text-align: center;
   line-height: 50px;
@@ -938,7 +934,9 @@ section.most-read > .most-read-slidderContainer > .most-read-recomendation {
   animation: left-slide-animation 15s ease-in-out infinite;
 }
 .most-read-recomendation > .most-read-book {
+  max-width: 300px;
   width: 100%;
+  height: 350px;
   flex-shrink: 0;
   text-align: center;
   line-height: 50px;
@@ -1198,7 +1196,7 @@ main .author-information {
     flex-direction: column;
     box-shadow: 0 0 0 8px rgba(64, 61, 61, .3);
     background-color: #F1f1ea;
-    z-index: 999;
+    z-index: 10;
     overflow-y: auto;
 }
 .container-form > .book-icon{
@@ -1483,6 +1481,7 @@ p#email::before, p#password::before{
   cursor: pointer;
   border: none;
   color: #fff;
+  line-height: 20px;
   background-color: #3498db;
   font-weight: bold;
   transition: all 0.3s;
@@ -1522,6 +1521,9 @@ p#email::before, p#password::before{
   color: #3498db;
   text-align: center;
 }
+.feedback-credit:hover{
+  text-decoration: underline;
+}
 
 @keyframes fade-in {
   from {
@@ -1540,8 +1542,7 @@ p#email::before, p#password::before{
   .container-discover-genres{
     max-width: 750px;
     width: 100%;
-    height: 320px;
-    top: 47.5%;
+    top: 49%;
     left: 59%;
   }
   nav{
@@ -1577,12 +1578,14 @@ p#email::before, p#password::before{
     grid-template-columns: repeat(2, 1fr);
     column-gap: 16px;
   }
+  .box-genre .genre-title{
+    font-size: 30px;
+  }
   .genre-title{
     display: flex;
     justify-content: center;
     align-items: center;
   }
- 
   .recomendations > .week-books-recomendations .recomendation-books-title{
     width: 100%;
     align-items: center;
@@ -1599,6 +1602,18 @@ p#email::before, p#password::before{
   }
   .my-recomendation .myPreference-title, .most-read-title{
     text-align: center;
+  }
+  .external-books-sites-container .sign-in-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .feedback-container .feedback-box > .feedback-form{
+    width: 350px;
+    top: 50%;
+    right: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
   }
 }
 @media (max-width: 820px) {
@@ -1631,28 +1646,91 @@ p#email::before, p#password::before{
     grid-template-columns: repeat(1, 1fr);
     row-gap: 16px;
   }
-  .genre-title{
+  .box-genre .genre-title{
     font-size: 25px;
   }
   .myPreference{
     max-width: 300px;
   }
-}
-@media (max-width: 480px) {
+  .container-discover-genres{
+    max-width: 600px;
+    height: auto;
+    padding: .5rem;
+    top: 57%;
+    left: 55%;
+  }
   .feedback-box {
-    width: 90%;
-    max-width: 350px;
+    width: 2rem;
+  }
+  .feedback-box h3 {
+    font-size: 2em;
+  }
+  .week-books-recomendations .container-recomendations .container-recomendation-books .book-single{
+    width: 200px;
+    height: 250px;
+  }
+  .feedback-container .feedback-box > .feedback-form{
+    width: 300px;
+    top: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .myPreference, .most-read-book{
+    max-width: 250px;
+    height: auto;
   }
 }
-
-/*
-/* Small devices (phones, landscape) */
-/* @media (max-width: 600px) { */
-  /* Styles for larger phones or landscape mode */
-/* } */
-
-/* Extra small devices (phones, portrait)
-@media (max-width: 480px) {
-  
+@media (max-width: 580px){
+  .container-discover-genres{
+    max-width: 500px;
+    height: auto;
+    padding: .5rem;
+    top: 63%;
+    left: 55%;
+  }
+  .img-animation{
+    display: none;
+  }
+  .header-background-images > h1{
+    top: 45%;
+  }
+  .header-background-images > p{
+    top: 70%;
+  }
+  .title h1{
+    font-size: 25px;
+  }
+  .feedback-container .feedback-box > .feedback-form{
+    width: 300px;
+    padding: 1rem;
+    top: 50%;
+    right: -200%;
+    position: fixed;
+  }
+  .author-information{
+    width: 100%;
+  }
+  .author-information h1{
+    font-size: 25px;
+  }
+  .input-url .input-search-about-author{
+    width: 100%;
+  }
+  .input-url .search-about-author{
+    width: 100%;
+  }
 }
-*/
+@media (max-width: 480px) {
+  .author-information{
+    width: 100%;
+  }
+  .author-information h1{
+    font-size: 20px;
+  }
+  .input-url .input-search-about-author{
+    width: 100%;
+  }
+  .input-url .search-about-author{
+    width: 100%;
+  }
+}
