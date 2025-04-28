@@ -8,8 +8,9 @@
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true
   },
-  "include": ["assets-scripts/**/*.js", "API/**/*.ts"],
+  "include": ["scripts/**/*.js", "API/**/*.ts"],
   "exclude": ["dist", "node_modules"]
 }

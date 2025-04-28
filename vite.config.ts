@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite';
-import { resolve } from 'path';
+import { resolve } from "path";
+import { createHtmlPlugin } from "vite-plugin-html";
+import path from "path";
 // import eslintPlugin from 'vite-plugin-eslint';
-import { createHtmlPlugin } from 'vite-plugin-html'; 
-import path from 'path';
 
 export default defineConfig({
   plugins: [
@@ -13,7 +13,7 @@ export default defineConfig({
           title: "Download de Livros",
         },
       },
-    }),
+    })
   ],
   root: "./",
   build: {
